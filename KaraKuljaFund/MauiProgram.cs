@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using KaraKuljaFund.Services;
+using Microsoft.Extensions.Logging;
 
 namespace KaraKuljaFund
 {
@@ -20,7 +21,7 @@ namespace KaraKuljaFund
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddTransient<IKaraKuljaFundAPI, KaraKuljaFundAPI>();
             return builder.Build();
         }
     }
