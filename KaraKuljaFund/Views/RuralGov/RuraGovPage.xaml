@@ -32,7 +32,7 @@
         <Grid Padding="0,0,0,20">
             <VerticalStackLayout>
                 <Border HeightRequest="40" WidthRequest="40" Padding="8" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
- VerticalOptions="Start" HorizontalOptions="Start" Margin="25">
+    VerticalOptions="Start" HorizontalOptions="Start" Margin="25">
                     <Border.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
                     </Border.GestureRecognizers>
@@ -43,7 +43,7 @@
                         <Shadow Opacity="0.3"/>
                     </Border.Shadow>
                     <Image HeightRequest="20"
- Source="chevron_back.png" />
+    Source="chevron_back.png" />
                 </Border>
                 <StackLayout Padding="5" Spacing="8">
                     <Label Text="{Binding RuralGov.Name}"
