@@ -16,12 +16,14 @@ namespace KaraKuljaFund.Services
                 {
                     Id=Guid.NewGuid(),
                     Name="RuralGov1",
+                    Coordinate="1",
                     Summa=100000
                 },
                 new RuralGovDto()
                 {
                     Id=Guid.NewGuid(),
                     Name="RuralGov2",
+                    Coordinate="1",
                     Summa=100000
                 },
                 new RuralGovDto()

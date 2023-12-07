@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KaraKuljaFund", "KaraKuljaFund.App\KaraKuljaFund.csproj", "{78B072A6-DDD4-4F64-8F44-24E73E74B462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KaraKuljaFund", "KaraKuljaFund\KaraKuljaFund.csproj", "{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78B072A6-DDD4-4F64-8F44-24E73E74B462}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D134CA-E3F7-4DA5-B1C4-75966E42ED2F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using KaraKuljaFund.Models;
 using KaraKuljaFund.Services;
 using KaraKuljaFund.ViewModels.Interfaces;
@@ -24,6 +25,15 @@ namespace KaraKuljaFund.ViewModels
         private void LoadData()
         {
             _ruralGovs=new ObservableCollection<RuralGovDto>(_karaKuljaFundAPI.GetRuralGovs());
+        }
+        [RelayCommand]
+        private async void NavigateToRuralGov(RuralGovDto ruralGov)
+        {
+            var navigationParameter=new Dictionary<string, object>()
+            {
+                { "RuralGovDto",ruralGov }
+            };
+            await Shell.Current.GoToAsync($"RuraGovPage", navigationParameter);
         }
     }
 }

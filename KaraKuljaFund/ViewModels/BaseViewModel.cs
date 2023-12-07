@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.ViewModels
 {
-    internal class BaseViewMode: ObservableObject
+    public class BaseViewMode: ObservableObject
     {
     }
 }

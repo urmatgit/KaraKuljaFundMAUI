@@ -2,6 +2,7 @@
 using KaraKuljaFund.ViewModels.Interfaces;
 using KaraKuljaFund.ViewModels;
 using Microsoft.Extensions.Logging;
+using KaraKuljaFund.Views.RuralGov;
 
 namespace KaraKuljaFund
 {
@@ -26,11 +27,12 @@ namespace KaraKuljaFund
             builder.Services.AddTransient<IKaraKuljaFundAPI, KaraKuljaFundAPI>();
             builder.Services.AddTransient<AppShell>();
             builder.Services.AddTransient<MainPage>();
-
+            builder.Services.AddTransient<RuraGovPage>();
             builder.Services.AddTransient<IMainViewModel, MainViewModel>();
-            
-            
-            
+            builder.Services.AddTransient<IRuralGovViewModel, RuralGovViewModel>();
+
+
+
             return builder.Build();
         }
     }

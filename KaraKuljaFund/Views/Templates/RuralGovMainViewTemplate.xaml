@@ -6,7 +6,7 @@
              x:Class="KaraKuljaFund.Views.Templates.RuralGovMainViewTemplate"
              x:DataType="models:RuralGovDto"
              >
-    <Border HeightRequest="80" Padding="6">
+    <Border  WidthRequest="200" Padding="10,4,4,4">
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="15"/>
         </Border.StrokeShape>
@@ -17,23 +17,24 @@
                 <Label Text="{Binding Name}"
                    MaxLines="1"
                    LineBreakMode="TailTruncation"
-                   FontSize="16"
+                   FontSize="14"
                    FontAttributes="Bold"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Start" />
-                <Label Text="{Binding Coordinate}"
-                   MaxLines="1"
-                   LineBreakMode="TailTruncation"
-                   FontSize="12"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start" />
                 <Label Text="{Binding Path=Summa, StringFormat='{}{0:c0}'}"
+   MaxLines="1"
+   FontAttributes="Bold"
+   LineBreakMode="TailTruncation"
+   FontSize="16"
+   VerticalOptions="Center" 
+   HorizontalOptions="Start" />
+                <Label Text="{Binding Coordinate}"
                    MaxLines="1"
-                   FontAttributes="Bold"
                    LineBreakMode="TailTruncation"
-                   FontSize="18"
+                   FontSize="10"
                    VerticalOptions="Center" 
                    HorizontalOptions="Start" />
+                
                  
             </StackLayout>
 
