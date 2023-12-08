@@ -3,12 +3,44 @@
     x:Class="KaraKuljaFund.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:local="clr-namespace:KaraKuljaFund"
-    Shell.FlyoutBehavior="Disabled">
-
-    <ShellContent
+    Shell.FlyoutBehavior="Flyout">
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black" HeightRequest="100">
+                <Image Aspect="AspectFill" Opacity="0.6" Source="karakulja.jpg">
+                    
+                </Image>
+                <Label Text="Фонд Кара-Кулжа" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <Shell.FlyoutFooter>
+        <StackLayout Orientation="Horizontal" BackgroundColor="AliceBlue" >
+        <Label Padding="5" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}" 
+               
+               />
+        <Label Padding="5" Text="Copyright: Эркимбаев У. О." 
+       
+       />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+       
+        <ShellContent
+        
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    
+    <ShellContent
+    Title="Rural goverments"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
+    </FlyoutItem>
+   
+        <ShellContent Title="About"
+                  Icon="info.png"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
 </Shell>

@@ -15,7 +15,7 @@ namespace KaraKuljaFund.ViewModels
     internal partial class MainViewModel: BaseViewMode,IMainViewModel
     {
         private readonly IKaraKuljaFundAPI _karaKuljaFundAPI;
-        [ObservableProperty] private ObservableCollection<RuralGovDto> _ruralGovs;
+        [ObservableProperty] private ObservableCollection<RuralGovDto> _ruralGovs =new ObservableCollection<RuralGovDto>();
         public MainViewModel(IKaraKuljaFundAPI karaKuljaFundAPI)
         {
             _karaKuljaFundAPI = karaKuljaFundAPI;

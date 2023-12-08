@@ -51,6 +51,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Mulish-Italic.ttf" />
 	  <None Remove="Resources\Fonts\Mulish.ttf" />
+	  <None Remove="Resources\Images\chevron_back.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
