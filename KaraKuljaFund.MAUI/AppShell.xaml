@@ -10,14 +10,16 @@
     Shell.FlyoutBehavior="Disabled"
     Title="KaraKuljaFund.MAUI"
     Background="{StaticResource PrimaryBrush}"
-    x:Name="thisShell">
+    x:Name="thisShell"
+    
+    >
 
-    <Tab
+    <Tab 
     Title="Home"
     Route="HomeTab"
     Icon="home_bar.png"
     FlyoutIcon="{AppThemeBinding Light=home.png, Dark=home_dark.png}">
-        <ShellContent
+        <ShellContent 
         Title="Home"
         ContentTemplate="{DataTemplate pages:HomePage}"
         Route="HomePage" />
@@ -39,7 +41,7 @@
         Background="{StaticResource PrimaryBrush}">
                 <Grid
             x:Name="navBar"
-            RowDefinitions="60, 60"
+            RowDefinitions="40, 40"
             Margin="20, 0">
                     <Image
                 Grid.RowSpan="2"
@@ -86,7 +88,7 @@
 
                 <Grid
             x:Name="flyout"
-            HorizontalOptions="Start" VerticalOptions="Fill"
+            HorizontalOptions="Start" VerticalOptions="Center"
             Background="{AppThemeBinding Light=White, Dark=Black}"
             WidthRequest="280"
             Shadow="{OnPlatform Default={x:Null}, iOS={Shadow Brush=Black, Opacity=0.3}}">
@@ -147,7 +149,7 @@
                         <ScrollView
                     Grid.Row="1">
                             <VerticalStackLayout
-                        VerticalOptions="Center"
+                        VerticalOptions="Start"
                         Spacing="10">
                                 <VerticalStackLayout
                             BindableLayout.ItemsSource="{Binding ShellSections, Source={x:Reference thisShell}}"

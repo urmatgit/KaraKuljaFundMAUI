@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
+             xmlns:model="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
+             x:Class="KaraKuljaFund.MAUI.Views.Pages.RuralGov.RuraGovContributionPage"
+             
+             Title="RuraGovContributionPage">
+    <VerticalStackLayout>
+        <ScrollView IsEnabled="True">
+            <Grid Padding="0,0,0,0">
+                <VerticalStackLayout Padding="2" >
+                    <Border  HeightRequest="40" WidthRequest="40" Padding="2" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
+    VerticalOptions="Start" HorizontalOptions="Start" Margin="2,2,2,10">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                        </Border.GestureRecognizers>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Opacity="0.3"/>
+                        </Border.Shadow>
+                        <Image HeightRequest="20"
+    Source="chevron_back.png" />
+                    </Border>
+                    <Grid ColumnDefinitions="*,*" Opacity="0.85" BackgroundColor="#9b99ae" >
+                        <StackLayout Padding="5" Spacing="8"   Grid.Column="0" >
+
+
+                            <Label Text="{Binding RuralGov.Name}" TextColor="White"
+                MaxLines="1"
+                LineBreakMode="TailTruncation"
+                FontSize="16"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+                            <Label Text="{Binding Path=RuralGov.Summa, StringFormat='{}{0:c0}'}" TextColor="White"
+MaxLines="1"
+FontAttributes="Bold"
+LineBreakMode="TailTruncation"
+FontSize="16"
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="1"  Padding="5" Spacing="8" >
+                            <Label Text="{Binding RuralGov.Coordinate}" TextColor="White"
+                MaxLines="1"
+                LineBreakMode="TailTruncation"
+                FontSize="10"
+                VerticalOptions="Center" 
+                HorizontalOptions="End" />
+
+                        </StackLayout>
+
+                    </Grid>
+                    <StackLayout>
+                        <Label Text="List of natives"/>
+                    </StackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </VerticalStackLayout>
+</pages:BaseContentPage>

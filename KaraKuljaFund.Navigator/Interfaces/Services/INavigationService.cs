@@ -11,12 +11,13 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
     public enum PageType
     {
         HomePage,
+        RuraGovContributionPage,
         RurlaGovListPage,
         AboutPage
     }
     public interface INavigationService
     {
-        void GoTo(PageType pageType, IParameters? parameters = null);
-        void GoBack();
+        Task GoTo(PageType pageType, IParameters? parameters = null);
+        Task GoBack();
     }
 }

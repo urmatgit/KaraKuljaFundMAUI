@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KaraKuljaFund.Navigator.Interfaces.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.Navigator.Models
 {
-    public class RuralGovDto
+    public class RuralGovDto:IParameters
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = default!;

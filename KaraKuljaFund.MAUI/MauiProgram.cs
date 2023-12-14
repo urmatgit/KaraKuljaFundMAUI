@@ -1,5 +1,7 @@
 ﻿using KaraKuljaFund.MAUI.Services;
+using KaraKuljaFund.MAUI.ViewModels;
 using KaraKuljaFund.MAUI.Views.Pages;
+using KaraKuljaFund.MAUI.Views.Pages.RuralGov;
 using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using KaraKuljaFund.Navigator.ViewModels;
@@ -39,10 +41,12 @@ namespace KaraKuljaFund.MAUI
 #endif
             builder.Services.AddTransient<AppShell>();
             builder.Services.AddTransient<HomePage>();
+            builder.Services.AddTransient<RuraGovContributionPage>();
             builder.Services.AddTransient<IKaraKuljaFundAPI, KaraKuljaFundAPI>();
             builder.Services.AddSingleton<INavigationService, NavigationService>();
 
             builder.Services.AddTransient<IHomePageViewModel, HomePageViewModel>();
+            builder.Services.AddTransient<IRuraGovContributionViewModel, RuraGovContributionViewModel>();
             return builder.Build();
         }
     }

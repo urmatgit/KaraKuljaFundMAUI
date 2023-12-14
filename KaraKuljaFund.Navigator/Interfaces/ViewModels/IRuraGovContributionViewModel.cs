@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.Navigator.Interfaces.ViewModels
 {
-    public interface IHomePageViewModel : IBasePageViewModel
+    public interface IRuraGovContributionViewModel: IBasePageViewModel
     {
-        public   List<RuralGovDto> ruralGovDtos { get; }
+        public RuralGovDto RuralGov { get; set; }
     }
 }

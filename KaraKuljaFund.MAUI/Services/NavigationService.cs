@@ -14,6 +14,7 @@ namespace KaraKuljaFund.MAUI.Services
 
         private readonly IList<PageType> rootPages = new List<PageType> {
         PageType.HomePage,
+        
         PageType.RurlaGovListPage,
         PageType.AboutPage
 
@@ -25,14 +26,14 @@ namespace KaraKuljaFund.MAUI.Services
         }
 
 
-        public void GoBack()
+        public async Task GoBack()
         {
-            Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("..");
         }
 
-        public async void GoTo(PageType pageType, IParameters parameters = null)
+        public async Task GoTo(PageType pageType, IParameters parameters = null)
         {
-            await Shell.Current.GoToAsync(GetPageRoute(pageType), true, new Dictionary<string, object>
+              await Shell.Current.GoToAsync(GetPageRoute(pageType), true, new Dictionary<string, object>
             {
                 [ParametersKey] = parameters
             });
