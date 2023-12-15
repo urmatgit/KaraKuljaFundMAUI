@@ -57,6 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\chevron_back.svg" />
+	  <None Remove="Resources\Images\chevron_down.svg" />
+	  <None Remove="Resources\Images\chevron_forward.svg" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\home_bar.png" />
 	  <None Remove="Resources\Images\home_dark.png" />

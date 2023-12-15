@@ -8,10 +8,10 @@
              Title="RuraGovContributionPage">
     <VerticalStackLayout>
         <ScrollView IsEnabled="True">
-            <Grid Padding="0,0,0,0">
-                <VerticalStackLayout Padding="2" >
-                    <Border  HeightRequest="40" WidthRequest="40" Padding="2" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
-    VerticalOptions="Start" HorizontalOptions="Start" Margin="2,2,2,10">
+            <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,*" >
+                <StackLayout Grid.Column="0" Grid.Row="0" >
+                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="0.8"   
+    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,2,2,10">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
                         </Border.GestureRecognizers>
@@ -24,40 +24,42 @@
                         <Image HeightRequest="20"
     Source="chevron_back.png" />
                     </Border>
-                    <Grid ColumnDefinitions="*,*" Opacity="0.85" BackgroundColor="#9b99ae" >
-                        <StackLayout Padding="5" Spacing="8"   Grid.Column="0" >
-
-
-                            <Label Text="{Binding RuralGov.Name}" TextColor="White"
-                MaxLines="1"
-                LineBreakMode="TailTruncation"
-                FontSize="16"
-                FontAttributes="Bold"
-                VerticalOptions="Center" 
-                HorizontalOptions="Start" />
-                            <Label Text="{Binding Path=RuralGov.Summa, StringFormat='{}{0:c0}'}" TextColor="White"
-MaxLines="1"
-FontAttributes="Bold"
-LineBreakMode="TailTruncation"
+                </StackLayout>
+                <StackLayout Grid.Column="1" Grid.Row="0" >
+                    <Border  VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource Secondary }" Margin="2,2,2,10">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Opacity="0.3"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowDefinitions="Auto,10,Auto"  >
+                            
+                            <StackLayout Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" Spacing="8">
+                                <Label Text="{Binding RuralGov.Name}"
 FontSize="16"
-VerticalOptions="Center" 
-HorizontalOptions="Start" />
-                        </StackLayout>
-                        <StackLayout Grid.Column="1"  Padding="5" Spacing="8" >
-                            <Label Text="{Binding RuralGov.Coordinate}" TextColor="White"
-                MaxLines="1"
-                LineBreakMode="TailTruncation"
-                FontSize="10"
-                VerticalOptions="Center" 
-                HorizontalOptions="End" />
+FontAttributes="Bold"></Label>
+                                
+                                
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Grid.Row="2" >
+                                <Label Text="{Binding Path=RuralGov.Summa, StringFormat='{}{0:c2}'}"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Grid.Row="2" BackgroundColor="Red" >
+                                <Label Text="Native count"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="3" Grid.Row="2"  BackgroundColor="Azure" >
+                                <Label Text="10" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                        </Grid>
 
-                        </StackLayout>
 
-                    </Grid>
-                    <StackLayout>
+                    </Border>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
                         <Label Text="List of natives"/>
                     </StackLayout>
-                </VerticalStackLayout>
+                
             </Grid>
         </ScrollView>
     </VerticalStackLayout>

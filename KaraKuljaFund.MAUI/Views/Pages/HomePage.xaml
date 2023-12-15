@@ -10,9 +10,9 @@
              x:DataType="viewModels:HomePageViewModel"
              Title="HomePage">
     <ScrollView>
-        <VerticalStackLayout Spacing="10" Padding="0,20">
-            <Grid Padding="20, 0" >
-                <Border Padding="20,0" BackgroundColor="White">
+        <VerticalStackLayout Spacing="10" Padding="0,5" >
+            <Grid Padding="10,0">
+                <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
@@ -24,7 +24,7 @@
                     </Grid>
                 </Border>
             </Grid>
-            <VerticalStackLayout Spacing="6" Padding="10,0,0,0" HeightRequest="340">
+            <Grid  Padding="10,0,0,0" >
                 <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding ruralGovDtos}" 
                                  SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
                                  SelectionChangedCommand="{Binding NavigateToRuralGovCommand}" 
@@ -42,6 +42,12 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+            </Grid>
+            <VerticalStackLayout Padding="10,0" HeightRequest="340">
+                <Label Text="Last input a monye11" VerticalOptions="Start"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Last input a monye" VerticalOptions="Start"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
