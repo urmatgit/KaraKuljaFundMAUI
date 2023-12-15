@@ -39,7 +39,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
             {
                 { "RuralGovDto",ruralGov }
             };
-            _navigationService.GoTo(PageType.RuraGovContributionPage, ruralGov);
+           await _navigationService.GoTo(PageType.RuraGovContributionPage, ruralGov);
             //await Shell.Current.GoToAsync($"RuraGovContributionPage", navigationParameter);
         }
     }

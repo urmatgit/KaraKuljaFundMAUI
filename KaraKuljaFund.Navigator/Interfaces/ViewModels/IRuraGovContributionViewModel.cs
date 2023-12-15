@@ -9,6 +9,6 @@ namespace KaraKuljaFund.Navigator.Interfaces.ViewModels
 {
     public interface IRuraGovContributionViewModel: IBasePageViewModel
     {
-        public RuralGovDto RuralGov { get; set; }
+         public RuralGovDto RuralGovVM { get; set; }
     }
 }

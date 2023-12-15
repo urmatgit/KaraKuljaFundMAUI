@@ -1,4 +1,6 @@
-﻿using SimpleToolkit.Core;
+﻿using KaraKuljaFund.MAUI.Views.Pages;
+using KaraKuljaFund.MAUI.Views.Pages.RuralGov;
+using SimpleToolkit.Core;
 using SimpleToolkit.SimpleShell;
 
 namespace KaraKuljaFund.MAUI
@@ -15,9 +17,14 @@ namespace KaraKuljaFund.MAUI
             InitializeComponent();
             Loaded += AppShell_Loaded;
             HideFlyout();
+            RegisterRoute();
         }
 
-         
+        private void RegisterRoute()
+        {
+            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(RuraGovContributionPage), typeof(RuraGovContributionPage));
+        }
 
         private void AppShell_Loaded(object? sender, EventArgs e)
         {

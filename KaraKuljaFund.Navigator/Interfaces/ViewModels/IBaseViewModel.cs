@@ -9,6 +9,6 @@ namespace KaraKuljaFund.Navigator.Interfaces.ViewModels
 {
     public interface IBaseViewModel :  INotifyPropertyChanged
     {
-        void OnPropertyChanged(string propertyName);
+       // void OnPropertyChanged(string propertyName);
     }
 }
