@@ -5,36 +5,71 @@
              x:Class="KaraKuljaFund.MAUI.Views.Templates.NativeDtoListViewTemplate"
              x:DataType="models:NativeDto"
              >
-    <Border HeightRequest="100" Padding="6">
+    <Border HeightRequest="80" Padding="4" BackgroundColor="{StaticResource Secondary}">
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="15"/>
         </Border.StrokeShape>
-        <HorizontalStackLayout Spacing="7">
-            <Grid>
-                <Border>
+        <Border.Shadow>
+            <Shadow Opacity="0.3"/>
+        </Border.Shadow>
+            
+        <Grid ColumnDefinitions="Auto,*,Auto" >
+            <Grid Grid.Column="0" >
+                <Border BackgroundColor="White">
                     <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10"/>
+                        <RoundRectangle CornerRadius="15"/>
                     </Border.StrokeShape>
-                    <Image Source="avartar.png" Aspect="AspectFill" 
-                        WidthRequest="90" HeightRequest="100"></Image>
+                    <Image Source="avartar.png" Aspect="AspectFill"  
+                        WidthRequest="60" HeightRequest="60"></Image>
                 </Border>
             </Grid>
 
-            <StackLayout Padding="5" Spacing="8">
-                <Label Text="{Binding Title}"
+            <StackLayout Padding="5" Spacing="2" Grid.Column="1">
+                <HorizontalStackLayout>
+                    <Label Text="{Binding Surname}"
                     MaxLines="1"
                     LineBreakMode="TailTruncation"
                     FontSize="16"
                     FontAttributes="Bold"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start" />
-                <Label Text="{Binding Address}"
+                    <Label Text="{Binding Name}"
+    MaxLines="1"
+    LineBreakMode="TailTruncation"
+    FontSize="16"
+    FontAttributes="Bold"
+    VerticalOptions="Center" 
+    HorizontalOptions="Start" />
+                    <Label Text="{Binding MiddleName}"
+MaxLines="1"
+LineBreakMode="TailTruncation"
+FontSize="16"
+FontAttributes="Bold"
+VerticalOptions="Center" 
+HorizontalOptions="Start" />
+                </HorizontalStackLayout>
+                <Grid ColumnDefinitions="Auto,*">
+                    <HorizontalStackLayout Grid.Column="0">
+                        <Label Text="д.р."  MaxLines="1"
+ LineBreakMode="TailTruncation"
+ FontSize="12"
+ VerticalOptions="Center" 
+ HorizontalOptions="Start" />
+                    <Label  Text="{Binding BirthDate,StringFormat='{}{0:dd.MM.yyyy}'}"
+    MaxLines="1"
+    LineBreakMode="TailTruncation"
+    FontSize="12"
+    VerticalOptions="Center" 
+    HorizontalOptions="Start" />
+                    </HorizontalStackLayout>
+                    <Label Text="{Binding Village}" Grid.Column="1" Margin="5,0"
                     MaxLines="1"
                     LineBreakMode="TailTruncation"
                     FontSize="12"
                     VerticalOptions="Center" 
                     HorizontalOptions="Start" />
-                <Label Text="{Binding Path=Price, StringFormat='{}{0:c0}'}"
+                </Grid>
+                <Label Text="{Binding Path=Summ, StringFormat='{}{0:c0}'}"
                     MaxLines="1"
                     FontAttributes="Bold"
                     LineBreakMode="TailTruncation"
@@ -43,8 +78,9 @@
                     HorizontalOptions="Start" />
                 
             </StackLayout>
-
-        </HorizontalStackLayout>
+            <Image Grid.Column="2" Source="chevron_forward.png" HeightRequest="20" WidthRequest="20" Margin="5"
+VerticalOptions="Center" HorizontalOptions="End"></Image>
+        </Grid>
 
     </Border>
 </ContentView>

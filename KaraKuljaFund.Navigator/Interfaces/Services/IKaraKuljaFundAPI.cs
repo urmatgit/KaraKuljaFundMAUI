@@ -10,5 +10,6 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
     public interface IKaraKuljaFundAPI
     {
         Task<List<RuralGovDto>> GetRuralGovs();
+        Task<List<NativeDto>> GetNativesByRuralGov(Guid ruralGovId);
     }
 }

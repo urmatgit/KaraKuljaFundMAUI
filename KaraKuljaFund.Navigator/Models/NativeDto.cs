@@ -22,5 +22,6 @@ namespace KaraKuljaFund.Navigator.Models
 
         public Guid RuralGovId { get; set; }
         public string RuralGovName { get; set; }
+        public decimal? Summ { get; set; }
     }
 }

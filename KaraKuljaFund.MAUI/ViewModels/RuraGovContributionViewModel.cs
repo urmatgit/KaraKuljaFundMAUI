@@ -5,15 +5,19 @@ using KaraKuljaFund.Navigator.Models;
 using KaraKuljaFund.Navigator.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KaraKuljaFund.MAUI.ViewModels
 {
-    public partial class RuraGovContributionViewModel(INavigationService navigationService) : BasePageViewModel, IRuraGovContributionViewModel
+    public partial class RuraGovContributionViewModel(INavigationService navigationService, IKaraKuljaFundAPI karaKuljaFundAPI) : BasePageViewModel, IRuraGovContributionViewModel
     {
+        private readonly IKaraKuljaFundAPI _karaKuljaFundAPI = karaKuljaFundAPI;
         private const string fRuralGovDto= "RuralGovDto";
+        [ObservableProperty]
+        private bool _loading = true;
         [ObservableProperty]
         private RuralGovDto _ruralGov; 
         public INavigationService NavigationService { get; } = navigationService;
@@ -22,8 +26,10 @@ namespace KaraKuljaFund.MAUI.ViewModels
             get { return _ruralGov; }
             set { _ruralGov = value; }
         }
+        [ObservableProperty]
+        public ObservableCollection<NativeDto> _natives;
 
-        public override void OnApplyParameters(IParameters parameters)
+        public override async void OnApplyParameters(IParameters parameters)
         {
             IDictionary<string, object> query = parameters as IDictionary<string, object>;
             if (query == null)
@@ -32,7 +38,13 @@ namespace KaraKuljaFund.MAUI.ViewModels
             }
             else if (query.ContainsKey(fRuralGovDto))
                 RuralGov = query[fRuralGovDto] as RuralGovDto;
+            await LoadNatives();
             base.OnApplyParameters(parameters);
+        }
+         private async Task LoadNatives()
+        {
+            Natives = new ObservableCollection<NativeDto>( await _karaKuljaFundAPI.GetNativesByRuralGov(RuralGov.Id));
+            Loading = false;
         }
         public override void OnApplyFirstParameters(IParameters parameters)
         {
