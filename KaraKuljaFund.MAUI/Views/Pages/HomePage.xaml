@@ -16,9 +16,9 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
-                    <Grid ColumnDefinitions="*, Auto" ColumnSpacing="5">
-                        <Picker ItemsSource="{Binding Years}" SelectedItem="{Binding Year, Mode=TwoWay}"/>
-                        <Picker ItemsSource="{Binding Months}" SelectedItem="{Binding Month, Mode=TwoWay}"/>
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
+                        <Picker Title="Year" Grid.Column="0" ItemsSource="{Binding Years}" SelectedItem="{Binding Year, Mode=TwoWay}"/>
+                        <Picker  Title="Month" Grid.Column="1" ItemsSource="{Binding Months}" SelectedItem="{Binding Month, Mode=TwoWay}"/>
                         <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                         <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
                     </Grid>
