@@ -17,15 +17,15 @@
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
                     <Grid ColumnDefinitions="*, Auto" ColumnSpacing="5">
-                        <DatePicker HorizontalOptions="Center" Format="yyyy" Grid.Column="0"/>
-                        <DatePicker HorizontalOptions="Center" Format="MM" Grid.Column="1" />
+                        <Picker ItemsSource="{Binding Years}" SelectedItem="{Binding Year, Mode=TwoWay}"/>
+                        <Picker ItemsSource="{Binding Months}" SelectedItem="{Binding Month, Mode=TwoWay}"/>
                         <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                         <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
                     </Grid>
                 </Border>
             </Grid>
             <Grid  Padding="10,0,0,0" >
-                <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding ruralGovDtos}" 
+                <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding RuralGovDtos}" 
                                  SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
                                  SelectionChangedCommand="{Binding NavigateToRuralGovCommand}" 
                                  SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RuralGovCollection} }"

@@ -43,7 +43,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
         }
          private async Task LoadNatives()
         {
-            Natives = new ObservableCollection<NativeDto>( await _karaKuljaFundAPI.GetNativesByRuralGov(RuralGov.Id));
+            Natives = new ObservableCollection<NativeDto>( await _karaKuljaFundAPI.GetNativesByRuralGov(RuralGov.Id,2023,1));
             Loading = false;
         }
         public override void OnApplyFirstParameters(IParameters parameters)

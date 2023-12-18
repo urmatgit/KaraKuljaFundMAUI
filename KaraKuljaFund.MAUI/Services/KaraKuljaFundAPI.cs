@@ -12,7 +12,7 @@ namespace KaraKuljaFund.MAUI.Services
     public class KaraKuljaFundAPI : IKaraKuljaFundAPI
     {
         public static readonly Guid TestId = Guid.NewGuid();
-        public async Task<List<NativeDto>> GetNativesByRuralGov(Guid ruralGovId)
+        public async Task<List<NativeDto>> GetNativesByRuralGov(Guid ruralGovId, int? year, int? month)
         {
             List<NativeDto> natives = new List<NativeDto>();
             for(var i = 0; i < 20; i++)
@@ -32,7 +32,7 @@ namespace KaraKuljaFund.MAUI.Services
             return natives;
         }
 
-        public async Task<List<RuralGovDto>> GetRuralGovs()
+        public async Task<List<RuralGovDto>> GetRuralGovs(int? year,int? month)
         {
             return new List<RuralGovDto> {
                 new RuralGovDto()
@@ -67,6 +67,16 @@ namespace KaraKuljaFund.MAUI.Services
                     Summa=100000
                 },
             };
+        }
+
+        public async Task<List<int?>> GetYears()
+        {
+            List<int?> years = new List<int?>();
+            years.Add(null);
+            years.Add(2022);
+            years.Add(2023);
+            years.Add(2024);
+            return years;
         }
     }
 }
