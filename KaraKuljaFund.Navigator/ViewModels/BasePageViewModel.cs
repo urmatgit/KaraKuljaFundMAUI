@@ -1,4 +1,5 @@
-﻿using KaraKuljaFund.Navigator.Interfaces.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.Navigator.ViewModels
 {
-    public class BasePageViewModel : BaseViewModel, IBasePageViewModel
+    public partial class BasePageViewModel : BaseViewModel, IBasePageViewModel
     {
+        [ObservableProperty]
+        bool _isNavigatable = true;
+
         public virtual void OnApplyParameters(IParameters parameters)
         {
         }

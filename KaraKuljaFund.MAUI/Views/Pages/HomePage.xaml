@@ -6,7 +6,7 @@
             xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"
             xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
              x:Class="KaraKuljaFund.MAUI.Views.Pages.HomePage"
-            
+             
              x:DataType="viewModels:HomePageViewModel"
              Title="HomePage">
     <ScrollView>

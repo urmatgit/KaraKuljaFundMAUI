@@ -66,6 +66,7 @@
 	  <None Remove="Resources\Images\log_out.png" />
 	  <None Remove="Resources\Images\log_out_dark.png" />
 	  <None Remove="Resources\Images\menu.png" />
+	  <None Remove="Resources\Images\search.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,6 +84,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Native\NativeContributionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\NativeDtoListViewTemplate.xaml">

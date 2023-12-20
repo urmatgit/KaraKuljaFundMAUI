@@ -11,6 +11,6 @@ namespace KaraKuljaFund.Navigator.Interfaces.ViewModels
     public interface IRuraGovContributionViewModel: IBasePageViewModel
     {
          public RuralGovDto RuralGovVM { get; set; }
-         public ObservableCollection<NativeDto> Natives { get; set; }
+         public List<NativeDto> Natives { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace KaraKuljaFund.Navigator.Models
     }
     public class TotalByNative : TotalWithMonths
     {
+        public Guid Id { get; set; }
         public string FIO { get; set; }
         public string Village { get; set; }
     }

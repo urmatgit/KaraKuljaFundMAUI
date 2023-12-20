@@ -2,6 +2,7 @@
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,31 @@ namespace KaraKuljaFund.MAUI.Services
         public NavigationService()
         {
         }
+        public async Task GoBack(PageType pageType)
+        {
 
+            //await Shell.Current.GoToAsync("../");
+            //var name = nameof(page);
+            //Debug.WriteLine(name);
+
+            await Shell.Current.Navigation.PopAsync();// GoToAsync($"..//{GetPageRoute(pageType)}");// (GetPageRoute(pageType),true);
+
+            var cur = Shell.Current.CurrentPage;
+        }
 
         public async Task GoBack()
         {
+
+//            await Shell.Current.Navigation.PopAsync(true);
             await Shell.Current.GoToAsync("..");
         }
-
+        public async Task GoTo(PageType pageType, Dictionary<string, object> parameters = null)
+        {
+            await Shell.Current.GoToAsync(GetPageRoute(pageType), true, new Dictionary<string, object>
+            {
+                [ParametersKey] = parameters
+            });
+        }
         public async Task GoTo(PageType pageType, IParameters parameters = null)
         {
               await Shell.Current.GoToAsync(GetPageRoute(pageType), true, new Dictionary<string, object>

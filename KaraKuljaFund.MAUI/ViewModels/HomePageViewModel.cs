@@ -30,7 +30,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
         private async  Task LoadDate()
         {
             var govs = await _karaKuljaFundAPI.GetRuralGovs(2023, 1);
-            RuralGovDtos = new ObservableCollection<RuralGovDto>(govs);
+            RuralGovDtos = new ObservableCollection<RuralGovDto>(govs.OrderBy(g=>g.Summa));
             Years = new ObservableCollection<int?>(await _karaKuljaFundAPI.GetYears());
             Months = new ObservableCollection<int?>() { null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
         }

@@ -3,18 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
              xmlns:model="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
-             xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"                          
+             xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"                         
+             xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"                       
              x:Class="KaraKuljaFund.MAUI.Views.Pages.RuralGov.RuraGovContributionPage"
-             
+             x:DataType="viewModels:RuraGovContributionViewModel"
              Title="RuraGovContributionPage">
     <VerticalStackLayout>
         <ScrollView IsEnabled="True">
-            <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,*" >
+            <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,40,*" >
                 <StackLayout Grid.Column="0" Grid.Row="0" >
                     <Border       BackgroundColor="{StaticResource Secondary }" Opacity="0.8"   
     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,2,2,10">
                         <Border.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                            <TapGestureRecognizer Command="{Binding NavigateToBackCommand}"></TapGestureRecognizer>
                         </Border.GestureRecognizers>
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"/>
@@ -50,19 +51,41 @@ FontAttributes="Bold"></Label>
                                 <Label Text="Native count"></Label>
                             </StackLayout>
                             <StackLayout Grid.Column="3" Grid.Row="2"  BackgroundColor="Azure" >
-                                <Label Text="10" FontAttributes="Bold"></Label>
+                                <Label Text="{Binding Natives.Count}" FontAttributes="Bold"></Label>
                             </StackLayout>
                         </Grid>
 
 
                     </Border>
                 </StackLayout>
-                
-                <VerticalStackLayout Spacing="2" Padding="10,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                <!--Find and filter-->
+                <Grid ColumnDefinitions="*,Auto" Padding="4, 0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="4">
+                    <VerticalStackLayout Grid.Column="1" Spacing="0">
+                        <Label Text="С взносом"/>
+                        <Switch IsToggled="{Binding FilterOnlyWithContribution}"   />
+                        
+                    </VerticalStackLayout>
+                    <Border Padding="4,0" BackgroundColor="White" Grid.Column="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Opacity="0.3"/>
+                        </Border.Shadow>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry Placeholder="Search by native"  Text="{Binding FilterStr}"  TextColor="{StaticResource TextColor}"></Entry>
+                        <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>
+                    </Grid>
+                </Border>
+                    
+                </Grid>
+                <!--Натив список-->
+                <VerticalStackLayout Spacing="2" Padding="10,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
                 <Label Text="Natives listings" FontAttributes="Bold" FontSize="18"></Label>
                     <Grid>
                 <CollectionView x:Name="NativeListings" ItemsSource="{Binding Natives}" VerticalScrollBarVisibility="Always"
-                                
+                                SelectionMode="Single"
+                                SelectionChangedCommand="{Binding NavigateToNativeDtoCommand}" 
                                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeListings} }"
                                 >
                     <CollectionView.ItemsLayout>

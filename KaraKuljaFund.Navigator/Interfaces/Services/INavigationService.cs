@@ -12,12 +12,15 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
     {
         HomePage,
         RuraGovContributionPage,
+        NativeContributionPage,
         RurlaGovListPage,
         AboutPage
     }
     public interface INavigationService
     {
         Task GoTo(PageType pageType, IParameters? parameters = null);
+        Task GoTo(PageType pageType, Dictionary<string, object> parameters=null);
+        Task GoBack(PageType pageType);
         Task GoBack();
     }
 }

@@ -9,9 +9,7 @@ public partial class RuraGovContributionPage : BaseContentPage
 	{
         BindingContext = viewModel;
         InitializeComponent();
+        
 	}
-    private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("..");
-    }
+    
 }

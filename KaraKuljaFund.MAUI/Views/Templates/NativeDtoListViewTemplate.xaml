@@ -2,8 +2,10 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
+             xmlns:viewmodel="clr-namespace:KaraKuljaFund.Navigator.ViewModels;assembly=KaraKuljaFund.Navigator"
              x:Class="KaraKuljaFund.MAUI.Views.Templates.NativeDtoListViewTemplate"
              x:DataType="models:NativeDto"
+             x:Name="NativeListTemplate"
              >
     <Border HeightRequest="80" Padding="4" BackgroundColor="{StaticResource Secondary}">
         <Border.StrokeShape>
@@ -19,13 +21,13 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="15"/>
                     </Border.StrokeShape>
-                    <Image Source="avartar.png" Aspect="AspectFill"  
+                    <Image Aspect="AspectFill"  
                         WidthRequest="60" HeightRequest="60"></Image>
                 </Border>
             </Grid>
 
             <StackLayout Padding="5" Spacing="2" Grid.Column="1">
-                <HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="2">
                     <Label Text="{Binding Surname}"
                     MaxLines="1"
                     LineBreakMode="TailTruncation"
@@ -78,7 +80,8 @@ HorizontalOptions="Start" />
                     HorizontalOptions="Start" />
                 
             </StackLayout>
-            <Image Grid.Column="2" Source="chevron_forward.png" HeightRequest="20" WidthRequest="20" Margin="5"
+            <Image Grid.Column="2" Source="chevron_forward.png" HeightRequest="20" WidthRequest="20" Margin="5" 
+                   IsVisible="{Binding IsNavigatable, Source={RelativeSource AncestorType={x:Type viewmodel:BasePageViewModel}}}"
 VerticalOptions="Center" HorizontalOptions="End"></Image>
         </Grid>
 

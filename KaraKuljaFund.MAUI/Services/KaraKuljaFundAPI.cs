@@ -15,7 +15,7 @@ namespace KaraKuljaFund.MAUI.Services
         public async Task<List<NativeDto>> GetNativesByRuralGov(Guid ruralGovId, int? year, int? month)
         {
             List<NativeDto> natives = new List<NativeDto>();
-            for(var i = 0; i < 20; i++)
+            for(var i = 0; i < 10; i++)
             {
                 string strI = i.ToString();
                 var native=new NativeDto()
@@ -25,7 +25,21 @@ namespace KaraKuljaFund.MAUI.Services
                    MiddleName = $"MiddleName_{strI}",
                    BirthDate=new DateTime(2000,1,1),
                    Village="kara-kulja",
-                   Summ=1000
+                   Summ=1000+(i*10)
+                };
+                natives.Add(native);
+            }
+            for (var i = 0; i < 5; i++)
+            {
+                string strI = i.ToString();
+                var native = new NativeDto()
+                {
+                    Name = $"Name_2{strI}",
+                    Surname = $"Surname_2{strI}",
+                    MiddleName = $"MiddleName_2{strI}",
+                    BirthDate = new DateTime(2000, 1, 2),
+                    Village = "kara-kulja",
+                    Summ = 0
                 };
                 natives.Add(native);
             }
@@ -40,14 +54,14 @@ namespace KaraKuljaFund.MAUI.Services
                     Id=TestId,
                     Name="RuralGov1",
                     Coordinate="1",
-                    Summa=100000
+                    Summa=40000
                 },
                 new RuralGovDto()
                 {
                     Id=Guid.NewGuid(),
                     Name="RuralGov2",
                     Coordinate="1",
-                    Summa=100000
+                    Summa=500000
                 },
                 new RuralGovDto()
                 {
@@ -59,14 +73,19 @@ namespace KaraKuljaFund.MAUI.Services
                 {
                     Id=Guid.NewGuid(),
                     Name="RuralGov4",
-                    Summa=100000
+                    Summa=600000
                 },new RuralGovDto()
                 {
                     Id=Guid.NewGuid(),
                     Name="RuralGov5",
-                    Summa=100000
+                    Summa=800000
                 },
             };
+        }
+
+        public Task<List<TotalByNative>> GetTotalByNative(Guid nativeid, int? year)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<List<int?>> GetYears()
