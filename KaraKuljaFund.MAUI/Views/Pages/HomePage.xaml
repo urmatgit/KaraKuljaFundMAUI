@@ -16,6 +16,9 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Opacity="0.5"/>
+                    </Border.Shadow>
                     <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
                         <Picker Title="Year" Grid.Column="0" ItemsSource="{Binding Years}" SelectedItem="{Binding Year, Mode=TwoWay}"/>
                         <Picker  Title="Month" Grid.Column="1" ItemsSource="{Binding Months}" SelectedItem="{Binding Month, Mode=TwoWay}"/>
@@ -25,7 +28,7 @@
                 </Border>
             </Grid>
             <Grid  Padding="10,0,0,0" >
-                <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding RuralGovDtos}" 
+                <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding RuralGovDtos}"  
                                  SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
                                  SelectionChangedCommand="{Binding NavigateToRuralGovCommand}" 
                                  SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RuralGovCollection} }"
@@ -33,8 +36,8 @@
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Span="2"
                              Orientation="Horizontal"
-                             HorizontalItemSpacing="10"
-                             VerticalItemSpacing="10"/>
+                             HorizontalItemSpacing="8"
+                             VerticalItemSpacing="4"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate >

@@ -7,12 +7,13 @@
              xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"                       
              x:Class="KaraKuljaFund.MAUI.Views.Pages.RuralGov.RuraGovContributionPage"
              x:DataType="viewModels:RuraGovContributionViewModel"
+             
              Title="RuraGovContributionPage">
-    <VerticalStackLayout>
-        <ScrollView IsEnabled="True">
-            <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,40,*" >
+    
+        
+            <Grid Padding="3" ColumnDefinitions="60,*" RowDefinitions="80,40,*"  >
                 <StackLayout Grid.Column="0" Grid.Row="0" >
-                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="0.8"   
+                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="1"   
     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,2,2,10">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToBackCommand}"></TapGestureRecognizer>
@@ -21,7 +22,7 @@
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
                         <Border.Shadow>
-                            <Shadow Opacity="0.3"/>
+                            <Shadow Opacity="0.5"/>
                         </Border.Shadow>
                         <Image HeightRequest="20"
     Source="chevron_back.png" />
@@ -33,7 +34,7 @@
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
                         <Border.Shadow>
-                            <Shadow Opacity="0.3"/>
+                            <Shadow Opacity="0.5"/>
                         </Border.Shadow>
                         <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowDefinitions="Auto,10,Auto"  >
                             
@@ -80,27 +81,32 @@ FontAttributes="Bold"></Label>
                     
                 </Grid>
                 <!--Натив список-->
-                <VerticalStackLayout Spacing="2" Padding="10,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
-                <Label Text="Natives listings" FontAttributes="Bold" FontSize="18"></Label>
-                    <Grid>
-                <CollectionView x:Name="NativeListings" ItemsSource="{Binding Natives}" VerticalScrollBarVisibility="Always"
-                                SelectionMode="Single"
+                
+                        <!--SelectionChanged="NativeListings_SelectionChanged"-->
+                        <CollectionView x:Name="NativeListings" ItemsSource="{Binding Natives}"   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="2,2,2,5"
+                                SelectionMode="Single"    VerticalOptions="FillAndExpand"
                                 SelectionChangedCommand="{Binding NavigateToNativeDtoCommand}" 
+                                
                                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeListings} }"
                                 >
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical"
-                                           ItemSpacing="4"/>
+                                           ItemSpacing="2"/>
                     </CollectionView.ItemsLayout>
+                            <CollectionView.Header>
+                                <Label Text="Natives listings" FontAttributes="Bold" FontSize="18"></Label>
+                            </CollectionView.Header>
+                    <CollectionView.Footer>
+                        <Label Text="Footer"></Label>
+                    </CollectionView.Footer>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                                 <templates:NativeDtoListViewTemplate />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                    </Grid>
-                </VerticalStackLayout>
+                    
     </Grid>
-        </ScrollView>
-    </VerticalStackLayout>
+        
+    
 </pages:BaseContentPage>

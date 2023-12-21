@@ -10,8 +10,9 @@ public partial class NativeContributionPage : BaseContentPage
         BindingContext = viewModel;
         InitializeComponent();
     }
-    private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        Navigation.PopAsync(true).Wait();
+        await Navigation.PopAsync();
     }
 }

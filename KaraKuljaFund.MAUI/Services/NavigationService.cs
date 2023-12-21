@@ -1,4 +1,5 @@
-﻿using KaraKuljaFund.Navigator.Interfaces.Services;
+﻿using KaraKuljaFund.MAUI.Views.Pages.RuralGov;
+using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -25,23 +26,13 @@ namespace KaraKuljaFund.MAUI.Services
         public NavigationService()
         {
         }
-        public async Task GoBack(PageType pageType)
-        {
-
-            //await Shell.Current.GoToAsync("../");
-            //var name = nameof(page);
-            //Debug.WriteLine(name);
-
-            await Shell.Current.Navigation.PopAsync();// GoToAsync($"..//{GetPageRoute(pageType)}");// (GetPageRoute(pageType),true);
-
-            var cur = Shell.Current.CurrentPage;
-        }
+        
 
         public async Task GoBack()
         {
-
-//            await Shell.Current.Navigation.PopAsync(true);
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.Navigation.PopAsync();
+            //            await Shell.Current.Navigation.PopAsync(true);
+            //await Shell.Current.GoToAsync("..");
         }
         public async Task GoTo(PageType pageType, Dictionary<string, object> parameters = null)
         {

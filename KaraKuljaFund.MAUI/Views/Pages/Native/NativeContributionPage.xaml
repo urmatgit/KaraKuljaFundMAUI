@@ -6,21 +6,22 @@
             xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"                          
              x:Class="KaraKuljaFund.MAUI.Views.Pages.Native.NativeContributionPage"
             Shell.NavBarIsVisible="True"
+                         
              Title="NativeContributionPage">
     <VerticalStackLayout>
         <ScrollView IsEnabled="True">
             <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,40,*" >
                 <StackLayout Grid.Column="0" Grid.Row="0" >
-                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="0.8"   
-    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,2,2,10">
+                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="1"   
+    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,4,2,2">
                         <Border.GestureRecognizers>
-                            <TapGestureRecognizer   Tapped="TapGestureRecognizer_OnTapped" ></TapGestureRecognizer>
+                            <TapGestureRecognizer   Command="{Binding NavigateToBackCommand}" ></TapGestureRecognizer>
                         </Border.GestureRecognizers>
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
                         <Border.Shadow>
-                            <Shadow Opacity="0.3"/>
+                            <Shadow Opacity="0.5"/>
                         </Border.Shadow>
                         <Image HeightRequest="20"
     Source="chevron_back.png" />

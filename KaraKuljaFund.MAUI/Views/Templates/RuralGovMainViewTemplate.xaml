@@ -6,12 +6,12 @@
              x:Class="KaraKuljaFund.MAUI.Views.Templates.RuralGovMainViewTemplate" 
              
              >
-    <Border  WidthRequest="200" HeightRequest="60" Padding="10,4,4,4" BackgroundColor="{StaticResource Secondary}">
+    <Border  WidthRequest="200" HeightRequest="60" Padding="4" Margin="4" BackgroundColor="{StaticResource Secondary}">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15"/>
+            <RoundRectangle CornerRadius="10"/>
         </Border.StrokeShape>
         <Border.Shadow>
-            <Shadow Opacity="0.3"/>
+            <Shadow Opacity="0.5"/>
         </Border.Shadow>
         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="20" >
             <Border>

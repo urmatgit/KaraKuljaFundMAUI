@@ -23,7 +23,7 @@ namespace KaraKuljaFund.MAUI
 
         private void RegisterRoute()
         {
-            Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            //Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(RuraGovContributionPage), typeof(RuraGovContributionPage));
             Routing.RegisterRoute(nameof(NativeContributionPage) , typeof(NativeContributionPage));
         }

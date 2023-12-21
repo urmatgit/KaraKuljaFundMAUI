@@ -1,4 +1,6 @@
-﻿namespace KaraKuljaFund.MAUI
+﻿
+
+namespace KaraKuljaFund.MAUI
 {
     public partial class App : Application
     {
@@ -6,12 +8,12 @@
         {
             InitializeComponent();
 
-            //MainPage = new AppShell();
+            MainPage = new AppShell();
         }
-        protected override void OnHandlerChanged()
-        {
-            base.OnHandlerChanged();
-            MainPage = this.Handler.MauiContext.Services.GetRequiredService<AppShell>();
-        }
+        //protected override void OnHandlerChanged()
+        //{
+        //    base.OnHandlerChanged();
+        //    MainPage =  this.Handler.MauiContext.Services.GetRequiredService<AppShell>();
+        //}
     }
 }

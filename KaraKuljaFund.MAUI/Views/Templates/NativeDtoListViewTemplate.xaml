@@ -7,20 +7,24 @@
              x:DataType="models:NativeDto"
              x:Name="NativeListTemplate"
              >
-    <Border HeightRequest="80" Padding="4" BackgroundColor="{StaticResource Secondary}">
+    <Border HeightRequest="80" Padding="4" BackgroundColor="{StaticResource Secondary}"
+            Margin="4">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15"/>
+            <RoundRectangle CornerRadius="10"/>
         </Border.StrokeShape>
         <Border.Shadow>
-            <Shadow Opacity="0.3"/>
+            <Shadow Opacity="0.5"/>
         </Border.Shadow>
             
         <Grid ColumnDefinitions="Auto,*,Auto" >
             <Grid Grid.Column="0" >
                 <Border BackgroundColor="White">
                     <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="15"/>
+                        <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Opacity="0.5"/>
+                    </Border.Shadow>
                     <Image Aspect="AspectFill"  
                         WidthRequest="60" HeightRequest="60"></Image>
                 </Border>

@@ -58,16 +58,8 @@ namespace KaraKuljaFund.MAUI.ViewModels
         [RelayCommand]
         private async void NavigateToBack()
         {
-            await _navigationService.GoBack(PageType.RuraGovContributionPage);
-            //var navigationParameter = new ParameterDictionary<string, object>()
-            //{
-                
-            //    { RuraGovContributionViewModel.fRuralGovDto ,_rgovDto }
-            //};
-            //await _navigationService.GoTo(PageType.RuraGovContributionPage, navigationParameter as IParameters);
-
-            //await _navigationService.GoBack(PageType.RuraGovContributionPage);
-            //await Shell.Current.GoToAsync($"RuraGovContributionPage");
+            await _navigationService.GoBack();
+            
         }
 
         public override void OnNavigatedFrom()

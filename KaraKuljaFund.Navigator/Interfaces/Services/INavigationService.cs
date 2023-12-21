@@ -20,7 +20,7 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
     {
         Task GoTo(PageType pageType, IParameters? parameters = null);
         Task GoTo(PageType pageType, Dictionary<string, object> parameters=null);
-        Task GoBack(PageType pageType);
+        
         Task GoBack();
     }
 }
