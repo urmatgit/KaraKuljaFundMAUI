@@ -1,6 +1,8 @@
 ﻿using Android.Views;
+using Java.Time;
 using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Models;
+using KaraKuljaFund.Navigator.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,10 +85,42 @@ namespace KaraKuljaFund.MAUI.Services
             };
         }
 
-        public Task<List<TotalByNative>> GetTotalByNative(Guid nativeid, int? year)
+        public Task<List<ContributionDto>> GetNativeContributions(Guid nativeid, Guid ruralGovId, int? year)
         {
-            throw new NotImplementedException();
+            var natives = new List<ContributionDto>();
+            natives.Add(new ContributionDto()
+            {
+                Date = DateTime.Now,
+                Summa = 200,
+                Month = Months.January,
+            });
+            natives.Add(new ContributionDto()
+            {
+                Date = DateTime.Now,
+                Summa = 200,
+                Month = Months.February,
+            });
+            natives.Add(new ContributionDto()
+            {
+                Date = DateTime.Now,
+                Summa = 200,
+                Month = Months.March,
+            });
+            natives.Add(new ContributionDto()
+            {
+                Date = DateTime.Now,
+                Summa = 200,
+                Month = Months.May,
+            });
+            natives.Add(new ContributionDto()
+            {
+                Date = DateTime.Now,
+                Summa = 200,
+                Month = Months.August,
+            });
+            return Task.FromResult(natives);
         }
+
 
         public async Task<List<int?>> GetYears()
         {

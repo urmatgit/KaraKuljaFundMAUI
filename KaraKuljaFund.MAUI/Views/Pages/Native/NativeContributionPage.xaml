@@ -8,12 +8,10 @@
             Shell.NavBarIsVisible="True"
                          
              Title="NativeContributionPage">
-    <VerticalStackLayout>
-        <ScrollView IsEnabled="True">
-            <Grid Padding="0,0,0,0" ColumnDefinitions="60,*" RowDefinitions="80,40,*" >
+            <Grid Padding="4" ColumnDefinitions="60,*" RowDefinitions="Auto,*"  RowSpacing="4">
                 <StackLayout Grid.Column="0" Grid.Row="0" >
                     <Border       BackgroundColor="{StaticResource Secondary }" Opacity="1"   
-    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,4,2,2">
+    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,4,2,2"  >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer   Command="{Binding NavigateToBackCommand}" ></TapGestureRecognizer>
                         </Border.GestureRecognizers>
@@ -27,7 +25,7 @@
     Source="chevron_back.png" />
                     </Border>
                 </StackLayout>
-                <StackLayout Grid.Column="1">
+                <StackLayout Grid.Column="1" Grid.Row="0">
                     <CollectionView x:Name="NativeListings" ItemsSource="{Binding Natives}" VerticalScrollBarVisibility="Always"
                 
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeListings} }"
@@ -43,7 +41,32 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </StackLayout>
-            </Grid>
-        </ScrollView>
-    </VerticalStackLayout>
+        <!--Натив список-->
+
+        <!--SelectionChanged="NativeListings_SelectionChanged"-->
+        <CollectionView x:Name="NativeContributionsList" ItemsSource="{Binding NativeContributions}"   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="2,2,2,5"
+                 SelectionMode="Single"    VerticalOptions="FillAndExpand" 
+                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeContributionsList} }"
+                 >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" 
+                                 Span="2" VerticalItemSpacing="4" 
+                                 HorizontalItemSpacing="2"
+                             />
+                
+            </CollectionView.ItemsLayout>
+            <CollectionView.Header>
+                <Label Text="Contribution listings" FontAttributes="Bold" FontSize="18"></Label>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <Label Text="Footer"></Label>
+            </CollectionView.Footer>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <templates:NativeMonthViewTemplate />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
 </pages:BaseContentPage>

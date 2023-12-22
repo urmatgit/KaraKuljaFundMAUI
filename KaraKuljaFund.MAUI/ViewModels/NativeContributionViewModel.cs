@@ -6,6 +6,7 @@ using KaraKuljaFund.Navigator.Models;
 using KaraKuljaFund.Navigator.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,17 +24,21 @@ namespace KaraKuljaFund.MAUI.ViewModels
         [ObservableProperty]
         private List<NativeDto> _natives;
         private RuralGovDto _rgovDto;
+        [ObservableProperty]
+        private List<ContributionDto> _nativeContributions;
+        
+
         public NativeContributionViewModel(IKaraKuljaFundAPI karaKuljaFundAPI, INavigationService navigationService)
         {
             _karaKuljaFundAPI = karaKuljaFundAPI;
             _navigationService = navigationService;
             IsNavigatable = false;
-            LoadDate();
+            Task.Factory.StartNew(async ()=>   await LoadDate());
         }
 
-        private void LoadDate()
+        private async Task LoadDate()
         {
-            
+            NativeContributions = await _karaKuljaFundAPI.GetNativeContributions(Guid.NewGuid(), Guid.NewGuid(), 2023);
         }
         
         public override void OnApplyParameters(IParameters parameters)

@@ -11,10 +11,10 @@
              Title="RuraGovContributionPage">
     
         
-            <Grid Padding="3" ColumnDefinitions="60,*" RowDefinitions="80,40,*"  >
+            <Grid Padding="4" ColumnDefinitions="60,*" RowDefinitions="80,40,*" RowSpacing="4"  >
                 <StackLayout Grid.Column="0" Grid.Row="0" >
                     <Border       BackgroundColor="{StaticResource Secondary }" Opacity="1"   
-    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,2,2,10">
+    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,4,2,2">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToBackCommand}"></TapGestureRecognizer>
                         </Border.GestureRecognizers>
@@ -29,7 +29,7 @@
                     </Border>
                 </StackLayout>
                 <StackLayout Grid.Column="1" Grid.Row="0" >
-                    <Border  VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource Secondary }" Margin="2,2,2,10">
+            <Border  VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource Secondary }" Margin="2,4,2,2">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
