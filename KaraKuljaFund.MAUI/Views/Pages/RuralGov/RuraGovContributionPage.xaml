@@ -1,112 +1,158 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<pages:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
-             xmlns:model="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
-             xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"                         
-             xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"                       
-             x:Class="KaraKuljaFund.MAUI.Views.Pages.RuralGov.RuraGovContributionPage"
-             x:DataType="viewModels:RuraGovContributionViewModel"
-             
-             Title="RuraGovContributionPage">
-    
-        
-            <Grid Padding="4" ColumnDefinitions="60,*" RowDefinitions="80,40,*" RowSpacing="4"  >
-                <StackLayout Grid.Column="0" Grid.Row="0" >
-                    <Border       BackgroundColor="{StaticResource Secondary }" Opacity="1"   
-    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="2,4,2,2">
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding NavigateToBackCommand}"></TapGestureRecognizer>
-                        </Border.GestureRecognizers>
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10"/>
-                        </Border.StrokeShape>
-                        <Border.Shadow>
-                            <Shadow Opacity="0.5"/>
-                        </Border.Shadow>
-                        <Image HeightRequest="20"
-    Source="chevron_back.png" />
-                    </Border>
-                </StackLayout>
-                <StackLayout Grid.Column="1" Grid.Row="0" >
-            <Border  VerticalOptions="FillAndExpand"  BackgroundColor="{StaticResource Secondary }" Margin="2,4,2,2">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10"/>
-                        </Border.StrokeShape>
-                        <Border.Shadow>
-                            <Shadow Opacity="0.5"/>
-                        </Border.Shadow>
-                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowDefinitions="Auto,10,Auto"  >
-                            
-                            <StackLayout Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" Spacing="8">
-                                <Label Text="{Binding RuralGov.Name}"
-FontSize="16"
-FontAttributes="Bold"></Label>
-                                
-                                
-                            </StackLayout>
-                            <StackLayout Grid.Column="1" Grid.Row="2" >
-                                <Label Text="{Binding Path=RuralGov.Summa, StringFormat='{}{0:c2}'}"></Label>
-                            </StackLayout>
-                            <StackLayout Grid.Column="2" Grid.Row="2" BackgroundColor="Red" >
-                                <Label Text="Native count"></Label>
-                            </StackLayout>
-                            <StackLayout Grid.Column="3" Grid.Row="2"  BackgroundColor="Azure" >
-                                <Label Text="{Binding Natives.Count}" FontAttributes="Bold"></Label>
-                            </StackLayout>
-                        </Grid>
+<pages:BaseContentPage
+    x:Class="KaraKuljaFund.MAUI.Views.Pages.RuralGov.RuraGovContributionPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
+    xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
+    xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
+    xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"
+    Title="RuraGovContributionPage"
+    x:DataType="viewModels:RuraGovContributionViewModel">
 
 
-                    </Border>
-                </StackLayout>
-                <!--Find and filter-->
-                <Grid ColumnDefinitions="*,Auto" Padding="4, 0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="4">
-                    <VerticalStackLayout Grid.Column="1" Spacing="0">
-                        <Label Text="С взносом"/>
-                        <Switch IsToggled="{Binding FilterOnlyWithContribution}"   />
-                        
-                    </VerticalStackLayout>
-                    <Border Padding="4,0" BackgroundColor="White" Grid.Column="0">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10"/>
-                    </Border.StrokeShape>
-                        <Border.Shadow>
-                            <Shadow Opacity="0.3"/>
-                        </Border.Shadow>
-                    <Grid ColumnDefinitions="*, Auto">
-                        <Entry Placeholder="Search by native"  Text="{Binding FilterStr}"  TextColor="{StaticResource TextColor}"></Entry>
-                        <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>
-                    </Grid>
-                </Border>
-                    
+    <Grid
+        Padding="4"
+        ColumnDefinitions="60,*"
+        RowDefinitions="80,40,*"
+        RowSpacing="4">
+        <StackLayout Grid.Row="0" Grid.Column="0">
+            <Border
+                Margin="2,4,2,2"
+                BackgroundColor="{StaticResource Secondary}"
+                HorizontalOptions="FillAndExpand"
+                Opacity="1"
+                VerticalOptions="FillAndExpand">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToBackCommand}" />
+                </Border.GestureRecognizers>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <Image HeightRequest="20" Source="chevron_back.png" />
+            </Border>
+        </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="1">
+            <Border
+                Margin="2,4,2,2"
+                BackgroundColor="{StaticResource Secondary}"
+                VerticalOptions="FillAndExpand">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <Grid
+                    ColumnDefinitions="Auto,Auto,Auto,Auto"
+                    ColumnSpacing="10"
+                    RowDefinitions="Auto,10,Auto">
+
+                    <StackLayout
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        Spacing="8"
+                        VerticalOptions="Center">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Text="{Binding RuralGov.Name}" />
+
+
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <Label Text="{Binding Path=RuralGov.Summa, StringFormat='{}{0:c2}'}" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        BackgroundColor="Red">
+                        <Label Text="Native count" />
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        BackgroundColor="Azure">
+                        <Label FontAttributes="Bold" Text="{Binding Natives.Count}" />
+                    </StackLayout>
                 </Grid>
-                <!--Натив список-->
-                
-                        <!--SelectionChanged="NativeListings_SelectionChanged"-->
-                        <CollectionView x:Name="NativeListings" ItemsSource="{Binding Natives}"   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="2,2,2,5"
-                                SelectionMode="Single"    VerticalOptions="FillAndExpand"
-                                SelectionChangedCommand="{Binding NavigateToNativeDtoCommand}" 
-                                
-                                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeListings} }"
-                                >
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical"
-                                           ItemSpacing="2"/>
-                    </CollectionView.ItemsLayout>
-                            <CollectionView.Header>
-                                <Label Text="Natives listings" FontAttributes="Bold" FontSize="18"></Label>
-                            </CollectionView.Header>
-                    <CollectionView.Footer>
-                        <Label Text="Footer"></Label>
-                    </CollectionView.Footer>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                                <templates:NativeDtoListViewTemplate />
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                    
+
+
+            </Border>
+        </StackLayout>
+        <!--  Find and filter  -->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Padding="4,0"
+            ColumnDefinitions="*,Auto"
+            ColumnSpacing="4">
+            <VerticalStackLayout Grid.Column="1" Spacing="0">
+                <Label Text="С взносом" />
+                <Switch IsToggled="{Binding FilterOnlyWithContribution}" />
+
+            </VerticalStackLayout>
+            <Border
+                Grid.Column="0"
+                Padding="4,0"
+                BackgroundColor="White">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.3" />
+                </Border.Shadow>
+                <Grid ColumnDefinitions="*, Auto">
+                    <Entry Placeholder="Search by native" Text="{Binding FilterStr}" />
+                    <Image
+                        Grid.Column="1"
+                        HeightRequest="20"
+                        Source="search.png"
+                        WidthRequest="20" />
+                </Grid>
+            </Border>
+
+        </Grid>
+        <!--  Натив список  -->
+
+        <!--  SelectionChanged="NativeListings_SelectionChanged"  -->
+        <CollectionView
+            x:Name="NativeListings"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="2,2,2,5"
+            ItemsSource="{Binding Natives}"
+            SelectionChanged="CollectionView_OnSelectionChanged"
+            SelectionChangedCommand="{Binding NavigateToNativeDtoCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeListings}}"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="2" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.Header>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Natives listings" />
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <Label Text="Footer" />
+            </CollectionView.Footer>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <templates:NativeDtoListViewTemplate />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
     </Grid>
-        
-    
+
+
 </pages:BaseContentPage>

@@ -77,7 +77,7 @@ namespace KaraKuljaFund.MAUI.Views.Pages
             var first = parameters is null;
             parameters = query.FirstOrDefault().Value as IParameters;
 
-            if (BindingContext is IBasePageViewModel viewModel)
+            if (parameters!=null && BindingContext is IBasePageViewModel viewModel)
             {
                 viewModel.OnApplyParameters(parameters);
 

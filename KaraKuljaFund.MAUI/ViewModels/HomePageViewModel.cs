@@ -57,6 +57,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
         [RelayCommand]
         private async void NavigateToRuralGov(RuralGovDto ruralGov)
         {
+            if (ruralGov is null) return;
             var navigationParameter = new Dictionary<string, object>()
             {
                 { "RuralGovDto",ruralGov }

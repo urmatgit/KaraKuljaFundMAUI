@@ -46,6 +46,8 @@
         <!--SelectionChanged="NativeListings_SelectionChanged"-->
         <CollectionView x:Name="NativeContributionsList" ItemsSource="{Binding NativeContributions}"   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="2,2,2,5"
                  SelectionMode="Single"    VerticalOptions="FillAndExpand" 
+                  SelectionChangedCommand="{Binding NavigateToNativeDtoCommand}"                        
+                        SelectionChanged="CollectionView_OnSelectionChanged"
                  SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NativeContributionsList} }"
                  >
             <CollectionView.ItemsLayout>

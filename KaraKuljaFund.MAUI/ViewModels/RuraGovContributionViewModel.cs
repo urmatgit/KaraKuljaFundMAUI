@@ -4,7 +4,7 @@ using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using KaraKuljaFund.Navigator.Models;
 using KaraKuljaFund.Navigator.ViewModels;
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -65,6 +65,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
 
         public override async void OnApplyParameters(IParameters parameters)
         {
+            if (parameters == null) return;
             IDictionary<string, object> query = parameters as IDictionary<string, object>;
             if (query == null)
             {
@@ -93,6 +94,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
         [RelayCommand]
         private async void NavigateToNativeDto(NativeDto nativeDto)
         {
+            if (nativeDto == null) return;
             var navigationParameter = new ParameterDictionary<string, object>()
             {
                 { NativeContributionViewModel.fNativeDto,nativeDto },

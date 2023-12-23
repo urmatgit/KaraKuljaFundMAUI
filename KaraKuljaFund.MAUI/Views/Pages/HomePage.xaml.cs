@@ -18,7 +18,7 @@ public partial class HomePage : BaseRootContentPage
      
     private void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        //CollectionView collectionView = sender as CollectionView;
-        // collectionView.SelectedItem = null;
+        CollectionView collectionView = sender as CollectionView;
+        collectionView.SelectedItem = null;
     }
 }

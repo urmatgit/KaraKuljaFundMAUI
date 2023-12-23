@@ -11,8 +11,9 @@ public partial class NativeContributionPage : BaseContentPage
         InitializeComponent();
     }
 
-    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        await Navigation.PopAsync();
+        if (sender is CollectionView collectionView)
+            collectionView.SelectedItem = null;
     }
 }
