@@ -8,7 +8,8 @@
     xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
     xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"
     Title="RuraGovContributionPage"
-    x:DataType="viewModels:RuraGovContributionViewModel">
+    x:DataType="viewModels:RuraGovContributionViewModel"
+    Shell.NavBarIsVisible="True">
 
 
     <Grid
@@ -92,11 +93,15 @@
             Padding="4,0"
             ColumnDefinitions="*,Auto"
             ColumnSpacing="4">
-            <VerticalStackLayout Grid.Column="1" Spacing="0">
-                <Label Text="С взносом" />
+            <HorizontalStackLayout
+                Grid.Column="1"
+                BackgroundColor="Red"
+                HorizontalOptions="Center"
+                Spacing="4">
+                <Label Text="С взносом" VerticalOptions="Center" />
                 <Switch IsToggled="{Binding FilterOnlyWithContribution}" />
 
-            </VerticalStackLayout>
+            </HorizontalStackLayout>
             <Border
                 Grid.Column="0"
                 Padding="4,0"
@@ -134,7 +139,7 @@
             SelectionMode="Single"
             VerticalOptions="FillAndExpand">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout ItemSpacing="2" Orientation="Vertical" />
+                <LinearItemsLayout ItemSpacing="8" Orientation="Vertical" />
             </CollectionView.ItemsLayout>
             <CollectionView.Header>
                 <Label
