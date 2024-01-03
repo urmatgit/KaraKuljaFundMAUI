@@ -3,6 +3,7 @@
     x:Class="KaraKuljaFund.MAUI.Views.Pages.Native.NativeContributionPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:KaraKuljaFund.MAUI.Views.Controls"
     xmlns:models="clr-namespace:KaraKuljaFund.Navigator.Models;assembly=KaraKuljaFund.Navigator"
     xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
     xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
@@ -87,6 +88,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <controls:FloutAction Grid.Row="1" Grid.Column="1" />
     </Grid>
 
 </pages:BaseContentPage>

@@ -84,6 +84,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Controls\FloutAction.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Contribution\ContributionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

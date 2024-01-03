@@ -1,4 +1,5 @@
-﻿using KaraKuljaFund.MAUI.Services;
+﻿using CommunityToolkit.Maui;
+using KaraKuljaFund.MAUI.Services;
 using KaraKuljaFund.MAUI.ViewModels;
 using KaraKuljaFund.MAUI.Views.Pages;
 using KaraKuljaFund.MAUI.Views.Pages.Contribution;
@@ -20,6 +21,7 @@ namespace KaraKuljaFund.MAUI
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

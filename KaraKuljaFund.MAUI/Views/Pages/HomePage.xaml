@@ -1,57 +1,78 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseRootContentPage
-            xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
-            xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"
-            xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
-             x:Class="KaraKuljaFund.MAUI.Views.Pages.HomePage"
-             
-             x:DataType="viewModels:HomePageViewModel"
-             Title="HomePage">
-    <ScrollView>
-        <VerticalStackLayout Spacing="10" Padding="0,5" >
+    x:Class="KaraKuljaFund.MAUI.Views.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:KaraKuljaFund.MAUI.Views.Controls"
+    xmlns:fonts="clr-namespace:System.Resources;assembly=mscorlib"
+    xmlns:pages="clr-namespace:KaraKuljaFund.MAUI.Views.Pages"
+    xmlns:templates="clr-namespace:KaraKuljaFund.MAUI.Views.Templates"
+    xmlns:viewModels="clr-namespace:KaraKuljaFund.MAUI.ViewModels"
+    Title="HomePage"
+    x:DataType="viewModels:HomePageViewModel">
+    <Grid>
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Padding="0,5"
+            Spacing="10">
             <Grid Padding="10,0">
                 <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
                     <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10"/>
+                        <RoundRectangle CornerRadius="10" />
                     </Border.StrokeShape>
                     <Border.Shadow>
-                        <Shadow Opacity="0.5"/>
+                        <Shadow Opacity="0.5" />
                     </Border.Shadow>
                     <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
-                        <Picker Title="Year" Grid.Column="0" ItemsSource="{Binding Years}" SelectedItem="{Binding Year, Mode=TwoWay}"/>
-                        <Picker  Title="Month" Grid.Column="1" ItemsSource="{Binding Months}" SelectedItem="{Binding Month, Mode=TwoWay}"/>
+                        <Picker
+                            Title="Year"
+                            Grid.Column="0"
+                            ItemsSource="{Binding Years}"
+                            SelectedItem="{Binding Year, Mode=TwoWay}" />
+                        <Picker
+                            Title="Month"
+                            Grid.Column="1"
+                            ItemsSource="{Binding Months}"
+                            SelectedItem="{Binding Month, Mode=TwoWay}" />
                         <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                         <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
                     </Grid>
                 </Border>
             </Grid>
-            <Grid  Padding="10,0,0,0" >
-                <CollectionView  x:Name="RuralGovCollection" ItemsSource="{Binding RuralGovDtos}"  
-                                 SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
-                                 SelectionChangedCommand="{Binding NavigateToRuralGovCommand}" 
-                                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RuralGovCollection} }"
-                                >
+            <Grid Padding="10,0,0,0">
+                <CollectionView
+                    x:Name="RuralGovCollection"
+                    ItemsSource="{Binding RuralGovDtos}"
+                    SelectionChanged="CollectionView_OnSelectionChanged"
+                    SelectionChangedCommand="{Binding NavigateToRuralGovCommand}"
+                    SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RuralGovCollection}}"
+                    SelectionMode="Single">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Span="2"
-                             Orientation="Horizontal"
-                             HorizontalItemSpacing="8"
-                             VerticalItemSpacing="4"/>
+                        <GridItemsLayout
+                            HorizontalItemSpacing="8"
+                            Orientation="Horizontal"
+                            Span="2"
+                            VerticalItemSpacing="4" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-                        <DataTemplate >
-                            <templates:RuralGovMainViewTemplate/>
+                        <DataTemplate>
+                            <templates:RuralGovMainViewTemplate />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </Grid>
             <VerticalStackLayout Padding="10,0" HeightRequest="340">
-                <Label Text="Last input a monye11" VerticalOptions="Start"/>
+                <Label Text="Last input a monye11" VerticalOptions="Start" />
             </VerticalStackLayout>
             <VerticalStackLayout>
-                <Label Text="Last input a monye" VerticalOptions="Start"/>
+                <Label Text="Last input a monye" VerticalOptions="Start" />
             </VerticalStackLayout>
+
+
+
         </VerticalStackLayout>
-    </ScrollView>
+        <controls:FloutAction Grid.Row="0" />
+
+    </Grid>
 </pages:BaseRootContentPage>
