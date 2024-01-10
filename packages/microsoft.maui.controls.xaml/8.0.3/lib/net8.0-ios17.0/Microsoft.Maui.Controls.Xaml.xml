@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Maui.Controls.Xaml</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Maui.Controls.Hosting.AppHostBuilderExtensions.UseMauiApp``1(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/> to use the specified <typeparamref name="TApp"/> as the main application type.
+            </summary>
+            <typeparam name="TApp">The type to use as the application.</typeparam>
+            <param name="builder">The <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/> to configure.</param>
+            <returns>The configured <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Hosting.AppHostBuilderExtensions.UseMauiApp``1(Microsoft.Maui.Hosting.MauiAppBuilder,System.Func{System.IServiceProvider,``0})">
+            <summary>
+            Configures the <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/> to use the specified <typeparamref name="TApp"/> as the main application type.
+            </summary>
+            <typeparam name="TApp">The type to use as the application.</typeparam>
+            <param name="builder">The <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/> to configure.</param>
+            <param name="implementationFactory">A factory to create the specified <typeparamref name="TApp"/> using the services provided in a <see cref="T:System.IServiceProvider"/>.</param>
+            <returns>The configured <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder"/>.</returns>
+        </member>
+        <member name="T:ThisAssembly">
+            <summary>Provides access to the current assembly information.</summary>
+        </member>
+        <member name="T:ThisAssembly.Git">
+            <summary>Provides access to the git information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirty">
+            <summary>IsDirty: true</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirtyString">
+            <summary>IsDirtyString: true</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.RepositoryUrl">
+            <summary>Repository URL: https://github.com/dotnet/maui</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Branch">
+            <summary>Branch: 8.0.1xx</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commit">
+            <summary>Commit: 1ebb238ff3</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Sha">
+            <summary>Sha: 1ebb238ff313b626fe40e33fb52bdf13697ede5c</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.CommitDate">
+            <summary>Commit date: 2023-11-07T20:09:06+00:00</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commits">
+            <summary>Commits on top of base version: 2</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Tag">
+            <summary>Tag: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseTag">
+            <summary>Base tag: </summary>
+        </member>
+        <member name="T:ThisAssembly.Git.BaseVersion">
+            <summary>Provides access to the base version information used to determine the <see cref="T:ThisAssembly.Git.SemVer" />.</summary>      
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Major">
+            <summary>Major: 8</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Patch">
+            <summary>Patch: 1</summary>
+        </member>
+        <member name="T:ThisAssembly.Git.SemVer">
+            <summary>Provides access to SemVer information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Major">
+            <summary>Major: 8</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Patch">
+            <summary>Patch: 3</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Label">
+            <summary>Label: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.DashLabel">
+            <summary>Label with dash prefix: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Source">
+            <summary>Source: File</summary>
+        </member>
+    </members>
+</doc>

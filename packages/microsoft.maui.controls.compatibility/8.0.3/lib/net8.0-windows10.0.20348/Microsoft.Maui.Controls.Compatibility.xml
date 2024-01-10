@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Maui.Controls.Compatibility</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.BrushHelpers.UpdateColor(Microsoft.Maui.Graphics.Color,Microsoft.UI.Xaml.Media.Brush@,System.Func{Microsoft.UI.Xaml.Media.Brush},System.Action{Microsoft.UI.Xaml.Media.Brush})">
+            <summary>
+            Handles the logic for setting a Microsoft.Maui.Controls.Compatibility Color for a Brush
+            while caching the original default brush
+            </summary>
+            <param name="color">The target Microsoft.Maui.Controls.Compatibility.Color</param>
+            <param name="defaultbrush">The renderer's cache for the default brush</param>
+            <param name="getter">Delegate for retrieving the Control's current Brush</param>
+            <param name="setter">Delegate for setting the Control's Brush</param>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.CellControl.GetAttachedFlyout">
+            <summary>
+            To check the context, not just the text.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsFlyout.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsFlyout.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsFlyout.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsTextBox">
+            <summary>
+                An intermediate class for injecting bindings for things the default
+                textbox doesn't allow us to bind/modify
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsEmbeddedPageWrapper.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsEmbeddedPageWrapper.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.FormsEmbeddedPageWrapper.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.PickerRenderer.StartAnimationRefresh">
+            <summary>
+                Forces redraw of the control during opening/closing animations to provide
+                a smoother sliding animation for the surrounding controls
+                Only applies on the phone and only when there are fewer than 6 items in the picker
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.PromptDialog.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.PromptDialog.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.PromptDialog.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.Resources.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.Resources.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Platform.UWP.Resources.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Maui.Controls.Compatibility.Platform.UAP.BootstrapHelper">
+            <summary>
+            Enables C++ code to simulate ICLRRuntimeHost2::ExecuteAssembly on top of ICLRRuntimeHost2::CreateDelegate in .net core 2.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Maui.Controls.Compatibility.Compatibility_XamlTypeInfo.XamlMetaDataProvider">
+            <summary>
+            Main class for providing metadata for the app or library
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Compatibility_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Compatibility_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.Compatibility.Compatibility_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+        <member name="T:ThisAssembly">
+            <summary>Provides access to the current assembly information.</summary>
+        </member>
+        <member name="T:ThisAssembly.Git">
+            <summary>Provides access to the git information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirty">
+            <summary>IsDirty: true</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.IsDirtyString">
+            <summary>IsDirtyString: true</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.RepositoryUrl">
+            <summary>Repository URL: https://github.com/dotnet/maui</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Branch">
+            <summary>Branch: 8.0.1xx</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commit">
+            <summary>Commit: 1ebb238ff3</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Sha">
+            <summary>Sha: 1ebb238ff313b626fe40e33fb52bdf13697ede5c</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.CommitDate">
+            <summary>Commit date: 2023-11-07T20:09:06+00:00</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Commits">
+            <summary>Commits on top of base version: 2</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.Tag">
+            <summary>Tag: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseTag">
+            <summary>Base tag: </summary>
+        </member>
+        <member name="T:ThisAssembly.Git.BaseVersion">
+            <summary>Provides access to the base version information used to determine the <see cref="T:ThisAssembly.Git.SemVer" />.</summary>      
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Major">
+            <summary>Major: 8</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.BaseVersion.Patch">
+            <summary>Patch: 1</summary>
+        </member>
+        <member name="T:ThisAssembly.Git.SemVer">
+            <summary>Provides access to SemVer information for the current assembly.</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Major">
+            <summary>Major: 8</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Minor">
+            <summary>Minor: 0</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Patch">
+            <summary>Patch: 3</summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Label">
+            <summary>Label: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.DashLabel">
+            <summary>Label with dash prefix: </summary>
+        </member>
+        <member name="F:ThisAssembly.Git.SemVer.Source">
+            <summary>Source: File</summary>
+        </member>
+    </members>
+</doc>

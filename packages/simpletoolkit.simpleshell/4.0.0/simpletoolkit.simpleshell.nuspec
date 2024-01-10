@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>SimpleToolkit.SimpleShell</id>
+    <version>4.0.0</version>
+    <title>SimpleToolkit.SimpleShell</title>
+    <authors>RadekVyM</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>logo_with_background.png</icon>
+    <readme>SimpleToolkit.SimpleShell.md</readme>
+    <projectUrl>https://github.com/RadekVyM/SimpleToolkit</projectUrl>
+    <description>Simplified implementation of .NET MAUI Shell that is part of SimpleToolkit library.</description>
+    <copyright>Copyright © Radek Vymětalík and contributors</copyright>
+    <tags>MAUI, Controls, Shell, Navigation, Transitions</tags>
+    <repository type="git" url="https://github.com/RadekVyM/SimpleToolkit" commit="41742e3f00c635d2c28a932c1ac0c48b5686418c" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Maui.Controls" version="8.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-android34.0">
+        <dependency id="Microsoft.Maui.Controls" version="8.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-ios17.0">
+        <dependency id="Microsoft.Maui.Controls" version="8.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-maccatalyst17.0">
+        <dependency id="Microsoft.Maui.Controls" version="8.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-windows10.0.19041">
+        <dependency id="Microsoft.Maui.Controls" version="8.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Maui.Controls.Compatibility" version="8.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

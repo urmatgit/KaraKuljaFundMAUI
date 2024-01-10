@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleToolkit.Core</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleToolkit.Core.AppHostBuilderExtensions.UseSimpleToolkit(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Configures the SimpleToolkit.Core package.
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SimpleToolkit.Core.PopoverExtensions">
+            <summary>
+            Extension methods for Popover control.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.PopoverExtensions.ShowAttachedPopover(Microsoft.Maui.Controls.View)">
+            <summary>
+            Shows a popover that is attached to the view.
+            </summary>
+            <param name="parentView">The view to which the popover is attached.</param>
+        </member>
+        <member name="M:SimpleToolkit.Core.PopoverExtensions.HideAttachedPopover(Microsoft.Maui.Controls.View)">
+            <summary>
+            Hides a popover that is attached to the view.
+            </summary>
+            <param name="parentView">The view to which the popover is attached.</param>
+        </member>
+        <member name="T:SimpleToolkit.Core.WindowExtensions">
+            <summary>
+            Helpers for managing the safe area of an application window and helpers for changing the system bars appearance on Android.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.DisplayContentBehindBars(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+            Forces application content to be displayed behind system bars (status and navigation bars) on Android and iOS.
+            </summary>
+            <param name="builder">The builder for your .NET MAUI application and services.</param>
+            <returns>The builder.</returns>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.SetDefaultStatusBarAppearance(Microsoft.Maui.Hosting.MauiAppBuilder,Microsoft.Maui.Graphics.Color,System.Boolean)">
+            <summary>
+            Changes the status bar appearance of all windows.
+            </summary>
+            <param name="builder">The builder for your .NET MAUI application and services.</param>
+            <param name="color">New background color of the status bar.</param>
+            <param name="lightElements">Whether text and icons should be light or dark.</param>
+            <returns>The builder.</returns>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.SetDefaultNavigationBarAppearance(Microsoft.Maui.Hosting.MauiAppBuilder,Microsoft.Maui.Graphics.Color,System.Boolean)">
+            <summary>
+            Changes the navigation bar appearance of all windows.
+            </summary>
+            <param name="builder">The builder for your .NET MAUI application and services.</param>
+            <param name="color">New background color of the navigation bar.</param>
+            <param name="lightElements">Whether text and icons should be light or dark.</param>
+            <returns>The builder.</returns>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.SetStatusBarAppearance(Microsoft.Maui.IWindow,Microsoft.Maui.Graphics.Color,System.Nullable{System.Boolean})">
+            <summary>
+            Changes the status bar appearance of a window.
+            </summary>
+            <param name="window">The window.</param>
+            <param name="color">New background color of the status bar.</param>
+            <param name="lightElements">Whether text and icons should be light or dark.</param>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.SetNavigationBarAppearance(Microsoft.Maui.IWindow,Microsoft.Maui.Graphics.Color,System.Nullable{System.Boolean})">
+            <summary>
+            Changes the navigation bar appearance of a window.
+            </summary>
+            <param name="window">The window.</param>
+            <param name="color">New background color of the navigation bar.</param>
+            <param name="lightElements">Whether text and icons should be light or dark.</param>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.SubscribeToSafeAreaChanges(Microsoft.Maui.IWindow,System.Action{Microsoft.Maui.Thickness})">
+            <summary>
+            Subscribes to safe area changes of the window.
+            </summary>
+            <param name="window">The window whose safe area changes you want to subscribe.</param>
+            <param name="listener">The listener that obtains safe area insets of type <see cref="T:Microsoft.Maui.Thickness"/>.</param>
+        </member>
+        <member name="M:SimpleToolkit.Core.WindowExtensions.UnsubscribeFromSafeAreaChanges(Microsoft.Maui.IWindow,System.Action{Microsoft.Maui.Thickness})">
+            <summary>
+            Unsubscribes from safe area changes of the window.
+            </summary>
+            <param name="window">The window whose safe area changes you want to unsubscribe.</param>
+            <param name="listener">The listener that you want to remove from subscription.</param>
+        </member>
+        <member name="P:SimpleToolkit.Core.MarkupExtensions.PathGeometryExtension.Path">
+            <summary>
+            String representation of a path.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.ContentButton">
+            <summary>
+            Button that can hold whatever content you want.
+            </summary>
+        </member>
+        <member name="E:SimpleToolkit.Core.ContentButton.Clicked">
+            <summary>
+            Event that fires when the button is clicked.
+            </summary>
+        </member>
+        <member name="E:SimpleToolkit.Core.ContentButton.Pressed">
+            <summary>
+            Event that fires when the button is pressed.
+            </summary>
+        </member>
+        <member name="E:SimpleToolkit.Core.ContentButton.Released">
+            <summary>
+            Event that fires when the button is released.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.ContentButtonEventArgs">
+            <summary>
+            Arguments of <see cref="T:SimpleToolkit.Core.ContentButton"/> events.
+            </summary>
+        </member>
+        <member name="P:SimpleToolkit.Core.ContentButtonEventArgs.InteractionPosition">
+            <summary>
+            Position of an interaction relative to the <see cref="T:SimpleToolkit.Core.ContentButton"/>
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.IContentButton">
+            <summary>
+            Button that can hold whatever content you want.
+            </summary>
+        </member>
+        <member name="P:SimpleToolkit.Core.IContentButton.Command">
+            <summary>
+            Gets or sets the command to invoke when the button is clicked. This is a bindable property.
+            </summary>
+        </member>
+        <member name="P:SimpleToolkit.Core.IContentButton.CommandParameter">
+            <summary>
+            Gets or sets the parameter to pass to the <see cref="P:SimpleToolkit.Core.IContentButton.Command"/> property. This is a bindable property.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.IContentButton.OnClicked">
+            <summary>
+            Method that is called when the button is clicked.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.IContentButton.OnPressed(Microsoft.Maui.Graphics.Point)">
+            <summary>
+            Method that is called when the button is pressed.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.IContentButton.OnReleased(Microsoft.Maui.Graphics.Point)">
+            <summary>
+            Method that is called when the button is released.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.Icon">
+            <summary>
+            Control displaying a tinted image.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.IIcon">
+            <summary>
+            Control displaying a tinted image.
+            </summary>
+        </member>
+        <member name="P:SimpleToolkit.Core.IIcon.TintColor">
+            <summary>
+            Tint color of an image.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.IPopover">
+            <summary>
+            Popover that can be anchored to a view.
+            </summary>
+        </member>
+        <member name="P:SimpleToolkit.Core.IPopover.Content">
+            <summary>
+            Content of the popover
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.IPopover.Show(Microsoft.Maui.Controls.View)">
+            <summary>
+            Shows the popover anchored to the view.
+            </summary>
+            <param name="parentView">The view to which the popover is anchored.</param>
+        </member>
+        <member name="M:SimpleToolkit.Core.IPopover.Hide">
+            <summary>
+            Hides the popover.
+            </summary>
+        </member>
+        <member name="T:SimpleToolkit.Core.Popover">
+            <summary>
+            Popover that can be anchored to a view.
+            </summary>
+        </member>
+        <member name="M:SimpleToolkit.Core.Popover.GetAttachedPopover(Microsoft.Maui.Controls.BindableObject)">
+            <summary>
+            Returns a popover that is attached to the view.
+            </summary>
+            <param name="view">The view to which the popover is attached.</param>
+            <returns>The popover that is attached to the view.</returns>
+        </member>
+        <member name="M:SimpleToolkit.Core.Popover.SetAttachedPopover(Microsoft.Maui.Controls.BindableObject,SimpleToolkit.Core.Popover)">
+            <summary>
+            Attaches the popover to the view.
+            </summary>
+            <param name="view">The view to which the popover will be attached.</param>
+            <param name="popover">The popover that will be attached to the view.</param>
+        </member>
+    </members>
+</doc>
