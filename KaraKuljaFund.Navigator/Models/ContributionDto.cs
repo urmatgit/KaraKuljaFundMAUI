@@ -14,7 +14,7 @@ namespace KaraKuljaFund.Navigator.Models
         public DateTime Date { get; set; }
         public Guid NativeId { get; set; }
         public Guid YearId { get; set; }
-        
+        public Guid RuralGovId { get; set; }
         public string? Description { get; set; }
     }
 }

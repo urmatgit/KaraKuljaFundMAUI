@@ -35,7 +35,10 @@ namespace KaraKuljaFund.MAUI.ViewModels
             IsNavigatable = false;
             Task.Factory.StartNew(async ()=>   await LoadDate());
         }
-
+        partial void OnNativeDtoChanged(NativeDto? oldValue, NativeDto newValue)
+        {
+            Contribution.NativeId = NativeDto.Id;
+        }
         private async Task LoadDate()
         {
             NativeContributions = await _karaKuljaFundAPI.GetNativeContributions(Guid.NewGuid(), Guid.NewGuid(), 2023);

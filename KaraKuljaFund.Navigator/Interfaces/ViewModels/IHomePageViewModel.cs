@@ -11,7 +11,7 @@ namespace KaraKuljaFund.Navigator.Interfaces.ViewModels
     public interface IHomePageViewModel : IBasePageViewModel
     {
         public ObservableCollection<RuralGovDto> RuralGovDtos { get; set; }
-        public int? Year { get; set; }
-        public ObservableCollection<int?> Years { get; }
+        public YearDto Year { get; set; }
+        public ObservableCollection<YearDto> Years { get; }
     }
 }

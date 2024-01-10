@@ -28,6 +28,7 @@
                         <Picker
                             Title="Year"
                             Grid.Column="0"
+                            ItemDisplayBinding="{Binding Year}"
                             ItemsSource="{Binding Years}"
                             SelectedItem="{Binding Year, Mode=TwoWay}" />
                         <Picker

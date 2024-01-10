@@ -26,8 +26,12 @@ namespace KaraKuljaFund.MAUI.ViewModels
         public INavigationService NavigationService { get; } = navigationService;
         public RuralGovDto RuralGovVM
         {
-            get { return _ruralGov; }
-            set { _ruralGov = value; }
+            get { return RuralGov; }
+            set { RuralGov = value; }
+        }
+        partial void OnRuralGovChanged(RuralGovDto? oldValue, RuralGovDto newValue)
+        {
+            Contribution.RuralGovId = newValue.Id;
         }
         [ObservableProperty]
         private List<NativeDto> _natives;

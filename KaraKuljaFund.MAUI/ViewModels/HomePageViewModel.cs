@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using KaraKuljaFund.Navigator.Models;
+using KaraKuljaFund.Navigator.Models.Enums;
 using KaraKuljaFund.Navigator.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,19 +32,26 @@ namespace KaraKuljaFund.MAUI.ViewModels
         {
             var govs = await _karaKuljaFundAPI.GetRuralGovs(2023, 1);
             RuralGovDtos = new ObservableCollection<RuralGovDto>(govs.OrderBy(g=>g.Summa));
-            Years = new ObservableCollection<int?>(await _karaKuljaFundAPI.GetYears());
+            Years = new ObservableCollection<YearDto>(await _karaKuljaFundAPI.GetYears());
             Months = new ObservableCollection<int?>() { null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            Contribution = new ContributionDto();
         }
 
-
-
+        partial void OnMonthChanged(int? oldValue, int? newValue)
+        {
+            Contribution.Month = newValue is null ? Navigator.Models.Enums.Months.January : (Months)newValue.Value;
+        }
+        partial void OnYearChanged(YearDto oldValue, YearDto newValue)
+        {
+            Contribution.YearId = newValue is null ? Guid.Empty: newValue.Id ;
+        }
         [ObservableProperty]
-        public int? _year;
+        public YearDto _year;
         [ObservableProperty]
         public int? _month;
 
         [ObservableProperty]
-        public ObservableCollection<int?> _years;
+        public ObservableCollection<YearDto> _years;
 
         [ObservableProperty]
         public ObservableCollection<int?> _months;

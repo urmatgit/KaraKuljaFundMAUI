@@ -11,7 +11,7 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
     {
         Task<List<RuralGovDto>> GetRuralGovs(int? year,int? month);
         Task<List<NativeDto>> GetNativesByRuralGov(Guid ruralGovId,int? year,int? month);
-        Task<List<int?>> GetYears();
+        Task<List<YearDto>> GetYears();
         Task<List<ContributionDto >> GetNativeContributions(Guid nativeid,Guid ruralGovId, int? year);
     }
 }

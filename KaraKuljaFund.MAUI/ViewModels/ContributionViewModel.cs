@@ -20,7 +20,6 @@ namespace KaraKuljaFund.MAUI.ViewModels
             _kuljaFundAPI= karaKuljaFundAPI;
             _navigationService= navigationService;
         }
-        [ObservableProperty]
-        ContributionDto _contribution;
+        
     }
 }

@@ -122,13 +122,13 @@ namespace KaraKuljaFund.MAUI.Services
         }
 
 
-        public async Task<List<int?>> GetYears()
+        public async Task<List<YearDto>> GetYears()
         {
-            List<int?> years = new List<int?>();
+            List<YearDto> years = new List<YearDto>();
             years.Add(null);
-            years.Add(2022);
-            years.Add(2023);
-            years.Add(2024);
+            years.Add(new YearDto() { Id = Guid.NewGuid(), Year = 2022 });
+            years.Add(new YearDto() { Id = Guid.NewGuid(), Year = 2023 });
+            years.Add(new YearDto() { Id = Guid.NewGuid(), Year = 2024 });
             return years;
         }
     }

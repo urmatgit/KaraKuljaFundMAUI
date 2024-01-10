@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
+using KaraKuljaFund.Navigator.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ namespace KaraKuljaFund.Navigator.ViewModels
 {
     public abstract class BaseViewModel : ObservableObject, IBaseViewModel
     {
+        
         //public event PropertyChangedEventHandler? PropertyChanged;
 
         //public void OnPropertyChanged(string propertyName)
