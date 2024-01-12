@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.MAUI.ViewModels
 {
-    public partial class RuraGovContributionViewModel(INavigationService navigationService, IKaraKuljaFundAPI karaKuljaFundAPI) : BasePageViewModel, IRuraGovContributionViewModel
+    public partial class RuraGovContributionViewModel(INavigationService navigationService, IKaraKuljaFundAPI karaKuljaFundAPI) : ContributionBasePageViewModel, IRuraGovContributionViewModel
     {
         private readonly IKaraKuljaFundAPI _karaKuljaFundAPI = karaKuljaFundAPI;
         public const string fRuralGovDto= "RuralGovDto";
@@ -31,10 +31,9 @@ namespace KaraKuljaFund.MAUI.ViewModels
         }
         partial void OnRuralGovChanged(RuralGovDto? oldValue, RuralGovDto newValue)
         {
-            Contribution.RuralGovId = newValue.Id;
+            Contribution.RuralGovDto = newValue;
         }
-        [ObservableProperty]
-        private List<NativeDto> _natives;
+        
 
 
         [ObservableProperty]

@@ -3,11 +3,78 @@
     x:Class="KaraKuljaFund.MAUI.Views.Pages.Contribution.ContributionPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    
+    >
+    <VerticalStackLayout Background="Transparent">
+    <Border Padding="20,0" BackgroundColor="White">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="10" />
+        </Border.StrokeShape>
+        <Border.Shadow>
+            <Shadow Opacity="0.5" />
+        </Border.Shadow>
+        <Grid>
+        <VerticalStackLayout
+     Grid.Row="0"
+     Padding="0,5"
+     Spacing="10">
+            <Grid Padding="10,0">
+                <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Opacity="0.5" />
+                    </Border.Shadow>
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
+                        <Picker
+                     Title="Жыл"
+                     Grid.Column="0"
+                     ItemDisplayBinding="{Binding Year}"
+                     ItemsSource="{Binding Years}"
+                     SelectedItem="{Binding Contribution.YearDto, Mode=TwoWay}" />
+                        <Picker
+                     Title="Ай"
+                     Grid.Column="1"
+                     ItemsSource="{Binding Months}"
+                     SelectedItem="{Binding Contribution.Month, Mode=TwoWay}" />
+                        <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
+                 <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+              
+                    <Picker
+     Title="Айыл окмот"
+     
+     ItemDisplayBinding="{Binding Name}"
+     ItemsSource="{Binding RuralGovDtos}"
+     SelectedItem="{Binding Contribution.RuralGovDto, Mode=TwoWay}" />
+              
+            </Border>
+
+            <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+
+                <Label Text="{Binding Contribution.Date,StringFormat='{}{0:dd.MM.yyyy}'}"  FontAttributes="Bold"
+                FontSize="16"/>
+
+            </Border>
+        </VerticalStackLayout>
+    </Grid>
+        </Border>
     </VerticalStackLayout>
 </toolkit:Popup>

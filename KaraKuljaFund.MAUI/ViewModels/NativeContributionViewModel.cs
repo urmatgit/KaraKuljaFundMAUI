@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.MAUI.ViewModels
 {
-   public partial class NativeContributionViewModel: BasePageViewModel, INativeContributionViewModel
+   public partial class NativeContributionViewModel: ContributionBasePageViewModel, INativeContributionViewModel
     {
         public const string fNativeDto = "NativeDto";
         private readonly IKaraKuljaFundAPI _karaKuljaFundAPI;
@@ -21,8 +21,7 @@ namespace KaraKuljaFund.MAUI.ViewModels
         
         [ObservableProperty]
         private NativeDto _nativeDto;
-        [ObservableProperty]
-        private List<NativeDto> _natives;
+        
         private RuralGovDto _rgovDto;
         [ObservableProperty]
         private List<ContributionDto> _nativeContributions;

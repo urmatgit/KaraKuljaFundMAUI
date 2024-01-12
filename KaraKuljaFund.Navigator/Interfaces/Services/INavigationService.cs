@@ -14,13 +14,14 @@ namespace KaraKuljaFund.Navigator.Interfaces.Services
         RuraGovContributionPage,
         NativeContributionPage,
         RurlaGovListPage,
-        AboutPage
+        AboutPage,
+        ContributionPopUp
     }
     public interface INavigationService
     {
         Task GoTo(PageType pageType, IParameters? parameters = null);
         Task GoTo(PageType pageType, Dictionary<string, object> parameters=null);
-        
+        Task<object?> GoToPopUp(PageType pageType, IParameters? parameters = null);
         Task GoBack();
     }
 }

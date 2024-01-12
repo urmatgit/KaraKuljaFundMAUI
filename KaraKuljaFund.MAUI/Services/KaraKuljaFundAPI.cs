@@ -92,31 +92,31 @@ namespace KaraKuljaFund.MAUI.Services
             {
                 Date = DateTime.Now,
                 Summa = 200,
-                Month = Months.January,
+                Month = EnumMonths.January,
             });
             natives.Add(new ContributionDto()
             {
                 Date = DateTime.Now,
                 Summa = 200,
-                Month = Months.February,
+                Month = EnumMonths.February,
             });
             natives.Add(new ContributionDto()
             {
                 Date = DateTime.Now,
                 Summa = 200,
-                Month = Months.March,
+                Month = EnumMonths.March,
             });
             natives.Add(new ContributionDto()
             {
                 Date = DateTime.Now,
                 Summa = 200,
-                Month = Months.May,
+                Month = EnumMonths.May,
             });
             natives.Add(new ContributionDto()
             {
                 Date = DateTime.Now,
                 Summa = 200,
-                Month = Months.August,
+                Month = EnumMonths.August,
             });
             return Task.FromResult(natives);
         }

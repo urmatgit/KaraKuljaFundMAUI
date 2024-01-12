@@ -2,20 +2,24 @@ using CommunityToolkit.Maui.Views;
 using KaraKuljaFund.Navigator.Interfaces.Services;
 using CommunityToolkit.Maui.Alerts;
 using KaraKuljaFund.MAUI.Views.Pages.Contribution;
+using KaraKuljaFund.Navigator.Interfaces.ViewModels;
+using KaraKuljaFund.MAUI.ViewModels;
+using KaraKuljaFund.Navigator.ViewModels;
 namespace KaraKuljaFund.MAUI.Views.Controls;
 
 
 public partial class FloutAction: Expander
 {
 
-    
-	public FloutAction()
+    private readonly INavigationService _navigationService;
+
+    public FloutAction()
 	{
-	
-		InitializeComponent();
+        _navigationService = Application.Current.Handler.MauiContext?.Services.GetRequiredService<INavigationService>();
+        InitializeComponent();
 	}
 
-     
+    
 
     private async void btnHelp_Clicked(object sender, EventArgs e)
     {
@@ -24,7 +28,8 @@ public partial class FloutAction: Expander
 
     private async void btnContribution_Clicked(object sender, EventArgs e)
     {
-        var Contribution = new ContributionPage(null);
-         await Shell.Current.CurrentPage.ShowPopupAsync(Contribution);
+
+        
+        await _navigationService.GoToPopUp(PageType.ContributionPopUp);
     }
 }

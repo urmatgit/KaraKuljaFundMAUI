@@ -14,6 +14,7 @@ namespace KaraKuljaFund.Navigator.ViewModels
         [ObservableProperty]
         static ContributionDto _contribution=new ContributionDto();
 
+        public static ContributionDto CurrentContribution { get { return _contribution; } }
         public BasePageViewModel()
         {
             //Contribution=new ContributionDto();

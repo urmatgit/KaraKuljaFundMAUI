@@ -1,4 +1,5 @@
-﻿using KaraKuljaFund.Navigator.Models.Enums;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using KaraKuljaFund.Navigator.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,22 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.Navigator.Models
 {
-    public class ContributionDto
+    public partial class ContributionDto: ObservableObject
     {
-        public decimal Summa { get; set; }
-        public Months Month { get; set; }
-        public DateTime Date { get; set; }
-        public Guid NativeId { get; set; }
-        public Guid YearId { get; set; }
-        public Guid RuralGovId { get; set; }
-        public string? Description { get; set; }
+        [ObservableProperty]
+        decimal? summa;
+        [ObservableProperty]
+        EnumMonths month;
+        [ObservableProperty]
+        DateTime _date;
+        [ObservableProperty]
+        private Guid _nativeId;
+        
+        [ObservableProperty]
+        private YearDto _yearDto;
+        [ObservableProperty]
+        RuralGovDto _ruralGovDto;
+        [ObservableProperty]
+        string? _description;
     }
 }

@@ -16,7 +16,7 @@ namespace KaraKuljaFund.Navigator.Models
     }
     public class TotalByRuralGovDto : TotalDto
     {
-        public Months Month { get; set; }
+        public EnumMonths Month { get; set; }
         public decimal Summa { get; set; }
 
     }

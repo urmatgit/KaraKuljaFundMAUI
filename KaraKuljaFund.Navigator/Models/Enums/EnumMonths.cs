@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.Navigator.Models.Enums
 {
-    public enum Months : int
+    public enum EnumMonths : int
     {
         January = 1,
         February,

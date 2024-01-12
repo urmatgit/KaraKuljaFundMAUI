@@ -1,4 +1,7 @@
-﻿using KaraKuljaFund.MAUI.Views.Pages.RuralGov;
+﻿using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
+using KaraKuljaFund.MAUI.Views.Pages.Contribution;
+using KaraKuljaFund.MAUI.Views.Pages.RuralGov;
 using KaraKuljaFund.Navigator.Interfaces.Services;
 using KaraKuljaFund.Navigator.Interfaces.ViewModels;
 using System;
@@ -47,6 +50,16 @@ namespace KaraKuljaFund.MAUI.Services
             {
                 [ParametersKey] = parameters
             });
+        }
+
+        public async Task<object?> GoToPopUp(PageType pageType, IParameters? parameters = null)
+        {
+            if (pageType==PageType.ContributionPopUp)
+            {
+               var popup = Application.Current.Handler.MauiContext?.Services.GetRequiredService<ContributionPage>();
+                return await Shell.Current.ShowPopupAsync(popup);
+            }
+            return Task.CompletedTask;
         }
 
         private string GetPageRoute(PageType pageType)

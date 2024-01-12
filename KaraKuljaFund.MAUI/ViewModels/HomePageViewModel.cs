@@ -14,12 +14,11 @@ using System.Threading.Tasks;
 
 namespace KaraKuljaFund.MAUI.ViewModels
 {
-    public partial class HomePageViewModel : BasePageViewModel, IHomePageViewModel
+    public partial class HomePageViewModel : ContributionBasePageViewModel, IHomePageViewModel
     {
         private readonly IKaraKuljaFundAPI _karaKuljaFundAPI;
         private readonly INavigationService _navigationService;
-        [ObservableProperty]
-        private ObservableCollection<RuralGovDto> _ruralGovDtos;
+        
 
         public HomePageViewModel(IKaraKuljaFundAPI karaKuljaFundAPI,INavigationService navigationService)
         {
@@ -33,28 +32,24 @@ namespace KaraKuljaFund.MAUI.ViewModels
             var govs = await _karaKuljaFundAPI.GetRuralGovs(2023, 1);
             RuralGovDtos = new ObservableCollection<RuralGovDto>(govs.OrderBy(g=>g.Summa));
             Years = new ObservableCollection<YearDto>(await _karaKuljaFundAPI.GetYears());
-            Months = new ObservableCollection<int?>() { null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            Months = new ObservableCollection<EnumMonths>() { EnumMonths.January,EnumMonths.February,EnumMonths.March, EnumMonths.April, EnumMonths.May, EnumMonths.June, EnumMonths.July, EnumMonths.August, EnumMonths.September, EnumMonths.October, EnumMonths.November, EnumMonths.December};
             Contribution = new ContributionDto();
         }
 
         partial void OnMonthChanged(int? oldValue, int? newValue)
         {
-            Contribution.Month = newValue is null ? Navigator.Models.Enums.Months.January : (Months)newValue.Value;
+            Contribution.Month = newValue is null ? Navigator.Models.Enums.EnumMonths.January : (EnumMonths)newValue.Value;
         }
         partial void OnYearChanged(YearDto oldValue, YearDto newValue)
         {
-            Contribution.YearId = newValue is null ? Guid.Empty: newValue.Id ;
+            Contribution.YearDto = newValue;
         }
         [ObservableProperty]
         public YearDto _year;
         [ObservableProperty]
         public int? _month;
 
-        [ObservableProperty]
-        public ObservableCollection<YearDto> _years;
-
-        [ObservableProperty]
-        public ObservableCollection<int?> _months;
+      
 
 
 

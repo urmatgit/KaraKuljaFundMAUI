@@ -14,7 +14,7 @@ namespace KaraKuljaFund.MAUI.Converters
         public object Convert(object value, Type targetType, object? parameter, CultureInfo culture)
         {
 
-            int? month =value!=null? ((int)(Months)value) :null ;
+            int? month =value!=null? ((int)(EnumMonths)value) :null ;
             if (month.HasValue) { return monthStr[month.Value-1];}
             return "";
         }
