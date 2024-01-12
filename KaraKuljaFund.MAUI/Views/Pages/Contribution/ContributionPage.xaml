@@ -4,23 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    
+    xmlns:resx="clr-namespace:KaraKuljaFund.MAUI.Resources.Localization"
+    Color="Transparent"
     >
-    <VerticalStackLayout Background="Transparent">
-    <Border Padding="20,0" BackgroundColor="White">
+    
+    <Border Padding="20,0" BackgroundColor="White" WidthRequest="200">
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="10" />
         </Border.StrokeShape>
         <Border.Shadow>
             <Shadow Opacity="0.5" />
         </Border.Shadow>
-        <Grid>
-        <VerticalStackLayout
-     Grid.Row="0"
+        
+            <VerticalStackLayout
+     
      Padding="0,5"
      Spacing="10">
-            <Grid Padding="10,0">
-                <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                <Label Text="{x:Static resx:Labels.ContributionInput}"
+                       TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                       />
+                
+                <Border  BackgroundColor="{StaticResource Secondary}" HorizontalOptions="CenterAndExpand">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10" />
                     </Border.StrokeShape>
@@ -28,22 +34,36 @@
                         <Shadow Opacity="0.5" />
                     </Border.Shadow>
                     <Grid ColumnDefinitions="*, *" ColumnSpacing="5">
-                        <Picker
-                     Title="Жыл"
-                     Grid.Column="0"
-                     ItemDisplayBinding="{Binding Year}"
-                     ItemsSource="{Binding Years}"
-                     SelectedItem="{Binding Contribution.YearDto, Mode=TwoWay}" />
-                        <Picker
-                     Title="Ай"
-                     Grid.Column="1"
+                            <VerticalStackLayout Grid.Column="0" Spacing="3"
+                             Margin="0,20,0,0">
+                                <Label Text="{x:Static resx:Labels.Year}"
+       TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
+       FontAttributes="Bold"
+       FontSize="16" />
+                                <Picker
+Title="{x:Static resx:Labels.Year}"
+
+ItemDisplayBinding="{Binding Year}"
+ItemsSource="{Binding Years}"
+SelectedItem="{Binding Contribution.YearDto, Mode=TwoWay}" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="1" Spacing="3"
+  Margin="0,20,0,0">
+                                <Label Text="{x:Static resx:Labels.Month}"
+TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
+FontAttributes="Bold"
+FontSize="16" />
+                                <Picker
+                     Title="{x:Static resx:Labels.Month}"
+                     
                      ItemsSource="{Binding Months}"
                      SelectedItem="{Binding Contribution.Month, Mode=TwoWay}" />
-                        <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
+                            </VerticalStackLayout>
+                            <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                  <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
                     </Grid>
                 </Border>
-            </Grid>
+            
             <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10" />
@@ -74,7 +94,7 @@
 
             </Border>
         </VerticalStackLayout>
-    </Grid>
+    
         </Border>
-    </VerticalStackLayout>
+    
 </toolkit:Popup>

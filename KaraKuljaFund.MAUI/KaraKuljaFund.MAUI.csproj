@@ -84,6 +84,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Resources\Localization\Labels.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Labels.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Localization\Labels.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Controls\FloutAction.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
