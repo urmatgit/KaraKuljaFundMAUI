@@ -1,4 +1,7 @@
 ﻿using CommunityToolkit.Maui;
+using KaraKuljaFund.MAUI.CustomRenders;
+using KaraKuljaFund.MAUI.Platforms.Android.Handlers;
+using KaraKuljaFund.MAUI.Platforms.iOS.Handlers;
 using KaraKuljaFund.MAUI.Services;
 using KaraKuljaFund.MAUI.ViewModels;
 using KaraKuljaFund.MAUI.Views.Pages;
@@ -29,7 +32,17 @@ namespace KaraKuljaFund.MAUI
                     fonts.AddFont("Nunito-Regular.ttf", "NunitoRegular");
                     fonts.AddFont("Nunito-Bold.ttf", "NunitoBold");
                     fonts.AddFont("Nunito-SemiBold.ttf", "NunitoSemiBold");
-                });
+                })
+                .ConfigureMauiHandlers(handlers =>
+                {
+#if ANDROID
+                    handlers.AddHandler(typeof(CustomEntry), typeof(CustomEntryHandler));
+#endif
+#if IOS
+                    handlers.AddHandler(typeof(CustomEntry), typeof(CustomEntryHandler));
+#endif
+                })
+                ;
 
             builder.UseSimpleShell();
             builder.UseSimpleToolkit();

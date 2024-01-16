@@ -123,6 +123,9 @@
   <data name="Date" xml:space="preserve">
     <value>Дата</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>Ай</value>
   </data>

@@ -18,7 +18,8 @@ namespace KaraKuljaFund.Navigator.Models
         DateTime _date;
         [ObservableProperty]
         private Guid _nativeId;
-        
+        [ObservableProperty]
+        private string _nativeName;
         [ObservableProperty]
         private YearDto _yearDto;
         [ObservableProperty]
