@@ -1,7 +1,11 @@
 ﻿using CommunityToolkit.Maui;
 using KaraKuljaFund.MAUI.CustomRenders;
+#if ANDROID
 using KaraKuljaFund.MAUI.Platforms.Android.Handlers;
+#endif
+#if IOS
 using KaraKuljaFund.MAUI.Platforms.iOS.Handlers;
+#endif
 using KaraKuljaFund.MAUI.Services;
 using KaraKuljaFund.MAUI.ViewModels;
 using KaraKuljaFund.MAUI.Views.Pages;

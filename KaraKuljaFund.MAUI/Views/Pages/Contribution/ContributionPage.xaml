@@ -3,103 +3,120 @@
     x:Class="KaraKuljaFund.MAUI.Views.Pages.Contribution.ContributionPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    
     xmlns:resx="clr-namespace:KaraKuljaFund.MAUI.Resources.Localization"
-    Color="Transparent"
-    >
-    
-    
-    <Border Padding="20,0" BackgroundColor="White" WidthRequest="400">
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+
+
+    <Border
+        Padding="20,0"
+        BackgroundColor="White"
+        WidthRequest="400">
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="10" />
         </Border.StrokeShape>
         <Border.Shadow>
             <Shadow Opacity="0.5" />
         </Border.Shadow>
-        
-            <VerticalStackLayout
-     
-     Padding="4"
-     Spacing="10">
-                <Label Text="{x:Static resx:Labels.ContributionInput}"
-                       TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
-                        FontAttributes="Bold"
-                        FontSize="20"
-                       />
 
-            <Border  BackgroundColor="{StaticResource Secondary}" HorizontalOptions="FillAndExpand" Padding="4">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow Opacity="0.5" />
-                    </Border.Shadow>
-                    <Grid ColumnDefinitions="*, *" ColumnSpacing="5" HorizontalOptions="FillAndExpand">
-                            <VerticalStackLayout Grid.Column="0" Spacing="2"
-                             Margin="0,20,0,0">
-                                <Label Text="{x:Static resx:Labels.Year}"
-       TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
-       FontAttributes="Bold"
-       FontSize="16" />
-                                <Picker
-Title="{x:Static resx:Labels.Year}"
+        <VerticalStackLayout Padding="4" Spacing="10">
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="{x:Static resx:Labels.ContributionInput}"
+                TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},
+                                            Dark={x:StaticResource DarkBlackColor}}" />
 
-ItemDisplayBinding="{Binding Year}"
-ItemsSource="{Binding Years}"
-SelectedItem="{Binding Contribution.YearDto, Mode=TwoWay}" />
-                            </VerticalStackLayout>
-                            <VerticalStackLayout Grid.Column="1" Spacing="3"
-  Margin="0,20,0,0">
-                                <Label Text="{x:Static resx:Labels.Month}"
-TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},Dark={x:StaticResource DarkBlackColor}}"
-FontAttributes="Bold"
-FontSize="16" />
-                                <Picker
-                     Title="{x:Static resx:Labels.Month}"
-                     
-                     ItemsSource="{Binding Months}"
-                     SelectedItem="{Binding Contribution.Month, Mode=TwoWay}" />
-                            </VerticalStackLayout>
-                            <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
+            <Border
+                Padding="8"
+                BackgroundColor="{StaticResource Secondary}"
+                HorizontalOptions="FillAndExpand">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <Grid
+                    ColumnDefinitions="*, *"
+                    ColumnSpacing="5"
+                    HorizontalOptions="FillAndExpand">
+                    <VerticalStackLayout
+                        Grid.Column="0"
+                        Margin="0,20,0,0"
+                        Spacing="2">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Text="{x:Static resx:Labels.Year}"
+                            TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},
+                                                        Dark={x:StaticResource DarkBlackColor}}" />
+                        <Picker
+                            Title="{x:Static resx:Labels.Year}"
+                            ItemDisplayBinding="{Binding Year}"
+                            ItemsSource="{Binding Years}"
+                            SelectedItem="{Binding Contribution.YearDto, Mode=TwoWay}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        Margin="0,20,0,0"
+                        Spacing="3">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            Text="{x:Static resx:Labels.Month}"
+                            TextColor="{AppThemeBinding Light={x:StaticResource BlackColor},
+                                                        Dark={x:StaticResource DarkBlackColor}}" />
+                        <Picker
+                            Title="{x:Static resx:Labels.Month}"
+                            ItemsSource="{Binding Months}"
+                            SelectedItem="{Binding Contribution.Month, Mode=TwoWay}" />
+                    </VerticalStackLayout>
+                    <!--<Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                  <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>-->
-                    </Grid>
-                </Border>
-            
-            <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                </Grid>
+            </Border>
+
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10" />
                 </Border.StrokeShape>
                 <Border.Shadow>
                     <Shadow Opacity="0.5" />
                 </Border.Shadow>
-                <HorizontalStackLayout Spacing="3">
-                    <Label Text="{x:Static resx:Labels.RuralGov}"
-        FontAttributes="Bold" />
-                    
+                <Grid HorizontalOptions="FillAndExpand" RowDefinitions="Auto,*">
+                    <Label
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        Text="{x:Static resx:Labels.RuralGov}" />
+
                     <Picker
-     Title="Айыл окмот"
-     HorizontalOptions="FillAndExpand"
-     ItemDisplayBinding="{Binding Name}"
-     ItemsSource="{Binding RuralGovDtos}"
-     SelectedItem="{Binding Contribution.RuralGovDto, Mode=TwoWay}" />
-                    
-                </HorizontalStackLayout>
+                        Grid.Row="1"
+                        HorizontalOptions="FillAndExpand"
+                        ItemDisplayBinding="{Binding Name}"
+                        ItemsSource="{Binding RuralGovDtos}"
+                        SelectedItem="{Binding Contribution.RuralGovDto, Mode=TwoWay}" />
+
+                </Grid>
             </Border>
 
-            <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10" />
                 </Border.StrokeShape>
                 <Border.Shadow>
                     <Shadow Opacity="0.5" />
                 </Border.Shadow>
-                
-                <Label Text="{Binding Contribution.Date,StringFormat='{}{0:dd.MM.yyyy}'}"  FontAttributes="Bold"
-                FontSize="16"/>
+                <Grid HorizontalOptions="FillAndExpand" RowDefinitions="Auto,*">
+                    <Label
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        Text="{x:Static resx:Labels.Date}" />
+                    <DatePicker Grid.Row="1" Date="{Binding Contribution.Date}" />
+                </Grid>
 
             </Border>
-            <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10" />
                 </Border.StrokeShape>
@@ -107,38 +124,70 @@ FontSize="16" />
                     <Shadow Opacity="0.5" />
                 </Border.Shadow>
                 <VerticalStackLayout Spacing="5">
-                    <Label Text="{x:Static resx:Labels.Native}"
-           FontAttributes="Bold" />
-                    
-                        <Entry Placeholder="{x:Static resx:Labels.Native}"
-                                   Margin="5,0"
-                                   Text="{Binding NativeName}"
-                                        
-                                   PlaceholderColor="{AppThemeBinding Light={x:StaticResource GrayColor},Dark={x:StaticResource DarkGrayColor}}" />
-                    
+                    <Label FontAttributes="Bold" Text="{x:Static resx:Labels.Native}" />
+
+                    <Entry
+                        Margin="5,0"
+                        Placeholder="{x:Static resx:Labels.Native}"
+                        PlaceholderColor="{AppThemeBinding Light={x:StaticResource GrayColor},
+                                                           Dark={x:StaticResource DarkGrayColor}}"
+                        Text="{Binding NativeName}" />
+
                 </VerticalStackLayout>
             </Border>
-            Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="10" />
-            </Border.StrokeShape>
-            <Border.Shadow>
-                <Shadow Opacity="0.5" />
-            </Border.Shadow>
-            <VerticalStackLayout Spacing="5">
-                <Label Text="{x:Static resx:Labels.Description}"
-           FontAttributes="Bold" />
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="5">
+                    <Label FontAttributes="Bold" Text="{x:Static resx:Labels.Summa}" />
 
-                <Entry Placeholder="{x:Static resx:Labels.Native}"
-                                   Margin="5,0"
-                                   Text="{Binding Description}"
-                                        
-                                   PlaceholderColor="{AppThemeBinding Light={x:StaticResource GrayColor},Dark={x:StaticResource DarkGrayColor}}" />
+                    <Entry
+                        Margin="5,0"
+                        Placeholder="{x:Static resx:Labels.Summa}"
+                        PlaceholderColor="{AppThemeBinding Light={x:StaticResource GrayColor},
+                                                           Dark={x:StaticResource DarkGrayColor}}"
+                        Text="{Binding NativeName}" />
 
-            </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="5">
+                    <Label FontAttributes="Bold" Text="{x:Static resx:Labels.Description}" />
+
+                    <Entry
+                        Margin="5,0"
+                        Placeholder="{x:Static resx:Labels.Description}"
+                        PlaceholderColor="{AppThemeBinding Light={x:StaticResource GrayColor},
+                                                           Dark={x:StaticResource DarkGrayColor}}"
+                        Text="{Binding Description}" />
+
+                </VerticalStackLayout>
+            </Border>
+            <Border Padding="8" BackgroundColor="{StaticResource Secondary}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.5" />
+                </Border.Shadow>
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                    <Button Grid.Column="0" Text="{x:Static resx:Labels.Cancel}" />
+                    <Button Grid.Column="1" Text="{x:Static resx:Labels.Save}" />
+
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+
     </Border>
-    </VerticalStackLayout>
-    
-        </Border>
-    
+
 </toolkit:Popup>

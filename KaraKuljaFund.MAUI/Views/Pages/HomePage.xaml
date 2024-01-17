@@ -17,7 +17,7 @@
             Padding="0,5"
             Spacing="10">
             <Grid Padding="10,0">
-                <Border Padding="20,0" BackgroundColor="{StaticResource Secondary}">
+                <Border Padding="20,10" BackgroundColor="{StaticResource Secondary}">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10" />
                     </Border.StrokeShape>

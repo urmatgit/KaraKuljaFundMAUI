@@ -61,6 +61,15 @@ namespace KaraKuljaFund.MAUI.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отмена.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Жаны взнос.
         /// </summary>
         internal static string ContributionInput {
@@ -111,6 +120,15 @@ namespace KaraKuljaFund.MAUI.Resources.Localization {
         internal static string RuralGov {
             get {
                 return ResourceManager.GetString("RuralGov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сохранить.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
